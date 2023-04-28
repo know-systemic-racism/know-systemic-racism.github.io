@@ -1,2 +1,2 @@
-# ksr.gthub.io
-Know Systemic Racism Data Projects
+# Know Systemic Racism Data Projects
+
