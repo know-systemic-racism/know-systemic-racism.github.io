@@ -5,10 +5,26 @@ title: "Know Systemic Racism Data Site"
 This is a Quarto website.
 
 To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Knowledge Graph
+#### [knowledge-graph-data](https://github.com/know-systemic-racism/knowledge-graph-data)
+#### [knowledge-graph-query-app] (https://github.com/know-systemic-racism/knowledge-graph-query-app)
+
+## California Map
+#### [ca-map-app](https://github.com/know-systemic-racism/ca-map-app)
+
+## Policy Manuals
+#### [policy-manuals-data-scripts](https://github.com/know-systemic-racism/policy-manuals-data-scripts)
+
+## Stanford History Entities Data
+#### [stanford-history-entities-data](https://github.com/know-systemic-racism/stanford-history-entities-data)
 
 ## Black@Stanford
+#### [black-at-stanford-chat-app](https://github.com/know-systemic-racism/black-at-stanford-chat-app)
+#### [black-at-stanford-qa-app](https://github.com/know-systemic-racism/black-at-stanford-qa-app)
 
 ## Digital Traces
+#### [digital-traces-2023-data](https://github.com/know-systemic-racism/digital-traces-2023-data)
+#### [digital-traces-app](https://github.com/know-systemic-racism/digital-traces-app)
 
 ## Simple Sabotage
 #### [simple-sabotage](https://github.com/know-systemic-racism/simple-sabotage)
