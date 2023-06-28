@@ -6,7 +6,7 @@ This is a Quarto website.
 
 ## Knowledge Graph
 #### [knowledge-graph-data](https://github.com/know-systemic-racism/knowledge-graph-data)
-#### [knowledge-graph-query-app] (https://github.com/know-systemic-racism/knowledge-graph-query-app)
+#### [knowledge-graph-query-app](https://github.com/know-systemic-racism/knowledge-graph-query-app)
 
 ## California Map
 #### [ca-map-app](https://github.com/know-systemic-racism/ca-map-app)
