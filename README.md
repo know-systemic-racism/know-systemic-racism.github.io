@@ -5,8 +5,7 @@
 2. Click on the edit icon and make your edits 
 3. Commit your edits (by clicking on "Commit changes...", adding a commit message describing the changes you made, and clicking on the "Commit Changes")
    - **Note**: please be sure to add a message with your commit so others (and your future self) can understand what changes were made and (optionally) why
-5. Review updates on the [website](https://know-systemic-racism.github.io/)
-  - **Note**: webpage takes ~ 1 minute to update
+5. Review updates on the [website](https://know-systemic-racism.github.io/). **Note**: webpage takes ~ 1 minute to update
 
 
 
