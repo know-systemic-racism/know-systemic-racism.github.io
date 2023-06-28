@@ -5,7 +5,7 @@
 2. Make your edits 
 3. Commit your edits
 4. Review updates on the [website](https://know-systemic-racism.github.io/)
-- Note*: webpage takes ~ 1 minute to update
+  - **Note**: webpage takes ~ 1 minute to update
 
 
 
