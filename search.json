@@ -11,21 +11,42 @@
     "href": "index.html",
     "title": "Know Systemic Racism Data Site",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites. ## Knowledge Graph #### knowledge-graph-data #### [knowledge-graph-query-app] (https://github.com/know-systemic-racism/knowledge-graph-query-app)"
+  },
+  {
+    "objectID": "index.html#california-map",
+    "href": "index.html#california-map",
+    "title": "Know Systemic Racism Data Site",
+    "section": "California Map",
+    "text": "California Map\n\nca-map-app"
+  },
+  {
+    "objectID": "index.html#policy-manuals",
+    "href": "index.html#policy-manuals",
+    "title": "Know Systemic Racism Data Site",
+    "section": "Policy Manuals",
+    "text": "Policy Manuals\n\npolicy-manuals-data-scripts"
+  },
+  {
+    "objectID": "index.html#stanford-history-entities-data",
+    "href": "index.html#stanford-history-entities-data",
+    "title": "Know Systemic Racism Data Site",
+    "section": "Stanford History Entities Data",
+    "text": "Stanford History Entities Data\n\nstanford-history-entities-data"
   },
   {
     "objectID": "index.html#blackstanford",
     "href": "index.html#blackstanford",
     "title": "Know Systemic Racism Data Site",
     "section": "Black@Stanford",
-    "text": "Black@Stanford"
+    "text": "Black@Stanford\n\nblack-at-stanford-chat-app\n\n\nblack-at-stanford-qa-app"
   },
   {
     "objectID": "index.html#digital-traces",
     "href": "index.html#digital-traces",
     "title": "Know Systemic Racism Data Site",
     "section": "Digital Traces",
-    "text": "Digital Traces"
+    "text": "Digital Traces\n\ndigital-traces-2023-data\n\n\ndigital-traces-app"
   },
   {
     "objectID": "index.html#simple-sabotage",
