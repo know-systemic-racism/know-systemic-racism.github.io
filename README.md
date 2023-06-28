@@ -2,8 +2,8 @@
 
 ## Steps to update webpage:
 1. Go to the source file of the page(s) you want to edit (i.e. if you want to edit the home page, you would go to the index.qmd file)
-2. Make your edits 
-3. Commit your edits
+2. Click on the edit icon and make your edits 
+3. Commit your edits (by clicking on "Commit changes...")
 4. Review updates on the [website](https://know-systemic-racism.github.io/)
   - **Note**: webpage takes ~ 1 minute to update
 
