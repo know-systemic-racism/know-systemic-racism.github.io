@@ -4,7 +4,7 @@ title: "Know Systemic Racism Data Site"
 
 This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>. 
 ## Knowledge Graph
 #### [knowledge-graph-data](https://github.com/know-systemic-racism/knowledge-graph-data)
 #### [knowledge-graph-query-app] (https://github.com/know-systemic-racism/knowledge-graph-query-app)
