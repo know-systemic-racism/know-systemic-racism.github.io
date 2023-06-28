@@ -11,5 +11,8 @@
 
 
 ## Source files and the pages they correspond to:
-index.qmd = home page
-about.qmd = about page
+| Source File    | Webpage |
+| ----------- | ----------- |
+| index.qmd      | home page       |
+| about.qmd   | about page        |
+
