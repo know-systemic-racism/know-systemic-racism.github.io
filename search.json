@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Know Systemic Racism Data Site",
@@ -61,12 +68,5 @@
     "title": "Know Systemic Racism Data Site",
     "section": "California Law Enforcement Agencies",
     "text": "California Law Enforcement Agencies\n\nca-leas-data"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
   }
 ]
