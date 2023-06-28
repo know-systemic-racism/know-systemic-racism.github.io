@@ -1,0 +1,22 @@
+---
+title: "Know Systemic Racism Data Site"
+---
+
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+## Black@Stanford
+
+## Digital Traces
+
+## Simple Sabotage
+#### [simple-sabotage](https://github.com/know-systemic-racism/simple-sabotage)
+
+## California Military Equipment Inventory
+#### [ca-mei-app](https://github.com/know-systemic-racism/ca-mei-app)
+#### [ca-mei-urls-data](https://github.com/know-systemic-racism/ca-mei-urls-data)
+#### [ca-mei-index-data](https://github.com/know-systemic-racism/ca-mei-index-data)
+
+## California Law Enforcement Agencies
+#### [ca-leas-data](https://github.com/know-systemic-racism/ca-leas-data)
