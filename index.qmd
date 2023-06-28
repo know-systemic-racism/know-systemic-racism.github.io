@@ -32,7 +32,7 @@ This is a Quarto website.
 #### [ca-mei-app](https://github.com/know-systemic-racism/ca-mei-app)
 #### [ca-mei-urls-data](https://github.com/know-systemic-racism/ca-mei-urls-data)
 #### [ca-mei-index-data](https://github.com/know-systemic-racism/ca-mei-index-data)
-A web app and data project by the Stanford Know Systemic Racism Project, with partners American Friends Service Committee (AFSC) and Electronic Frontier Foundation (EFF)
+
 
 ## California Law Enforcement Agencies
 #### [ca-leas-data](https://github.com/know-systemic-racism/ca-leas-data)
