@@ -12,7 +12,7 @@
 
 ## Source files and the pages they correspond to:
 | Source File    | Webpage |
-| ----------- | ----------- |
-| index.qmd      | home page       |
-| about.qmd   | about page        |
+| :----:   | :----:  |
+| index.qmd  | home page  |
+| about.qmd  | about page |
 
