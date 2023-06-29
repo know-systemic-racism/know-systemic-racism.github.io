@@ -7,59 +7,66 @@
     "text": "About this site"
   },
   {
-    "objectID": "index.html#california-map",
-    "href": "index.html#california-map",
-    "title": "Know Systemic Racism Data Site",
-    "section": "California Map",
-    "text": "California Map\n\nca-map-app"
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Know Systemic Racism Data Projects",
+    "section": "",
+    "text": "All of the projects below are in active development. If you are interested in learning more about Know Systemic Racism, [see this post]9https://library.stanford.edu/blogs/stanford-libraries-blog/2021/08/introducing-know-systemic-racism-ksr-project) or contact Felicia Smith at felicias@stanford.edu"
   },
   {
-    "objectID": "index.html#policy-manuals",
-    "href": "index.html#policy-manuals",
-    "title": "Know Systemic Racism Data Site",
-    "section": "Policy Manuals",
-    "text": "Policy Manuals\n\npolicy-manuals-data-scripts"
+    "objectID": "index.html#california-law-enforcement-agencies-data",
+    "href": "index.html#california-law-enforcement-agencies-data",
+    "title": "Know Systemic Racism Data Projects",
+    "section": "California Law Enforcement Agencies Data",
+    "text": "California Law Enforcement Agencies Data\nThis is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories."
   },
   {
-    "objectID": "index.html#stanford-history-entities-data",
-    "href": "index.html#stanford-history-entities-data",
-    "title": "Know Systemic Racism Data Site",
-    "section": "Stanford History Entities Data",
-    "text": "Stanford History Entities Data\n\nstanford-history-entities-data"
+    "objectID": "index.html#knowledge-graph-data-app",
+    "href": "index.html#knowledge-graph-data-app",
+    "title": "Know Systemic Racism Data Projects",
+    "section": "Knowledge Graph data App",
+    "text": "Knowledge Graph data App\nThe Know Systemic Racism Knowledge Graph is a project to construct a richly connected graph of events, people, organizations, and people to reveal connections between discrete collections of data and the people behind the data."
   },
   {
-    "objectID": "index.html#blackstanford",
-    "href": "index.html#blackstanford",
-    "title": "Know Systemic Racism Data Site",
-    "section": "Black@Stanford",
-    "text": "Black@Stanford\n\nblack-at-stanford-chat-app\n\n\nblack-at-stanford-qa-app"
+    "objectID": "index.html#california-map-app",
+    "href": "index.html#california-map-app",
+    "title": "Know Systemic Racism Data Projects",
+    "section": "California Map app",
+    "text": "California Map app\nNothing here, yet! It’s coming."
   },
   {
-    "objectID": "index.html#digital-traces",
-    "href": "index.html#digital-traces",
-    "title": "Know Systemic Racism Data Site",
-    "section": "Digital Traces",
-    "text": "Digital Traces\n\ndigital-traces-2023-data\n\n\ndigital-traces-app"
+    "objectID": "index.html#stanford-entities-data",
+    "href": "index.html#stanford-entities-data",
+    "title": "Know Systemic Racism Data Projects",
+    "section": "Stanford Entities data",
+    "text": "Stanford Entities data\nThis is the start of collecting graph data from Stanford-related library projects."
   },
   {
-    "objectID": "index.html#simple-sabotage",
-    "href": "index.html#simple-sabotage",
-    "title": "Know Systemic Racism Data Site",
-    "section": "Simple Sabotage",
-    "text": "Simple Sabotage\n\nsimple-sabotage"
+    "objectID": "index.html#blackstanford-appdeprecated-app",
+    "href": "index.html#blackstanford-appdeprecated-app",
+    "title": "Know Systemic Racism Data Projects",
+    "section": "Black@Stanford appdeprecated app",
+    "text": "Black@Stanford appdeprecated app\nThis is a prototype Question/Answer app that uses as the source a set of oral history transcripts from Black Stanford students and faculty."
   },
   {
-    "objectID": "index.html#california-military-equipment-inventory",
-    "href": "index.html#california-military-equipment-inventory",
-    "title": "Know Systemic Racism Data Site",
-    "section": "California Military Equipment Inventory",
-    "text": "California Military Equipment Inventory\n\nca-mei-app\n\n\nca-mei-urls-data\n\n\nca-mei-index-data"
+    "objectID": "index.html#digital-traces-data",
+    "href": "index.html#digital-traces-data",
+    "title": "Know Systemic Racism Data Projects",
+    "section": "Digital Traces data",
+    "text": "Digital Traces data\napp This is based on work done during the winter 2023 course Digital Traces."
   },
   {
-    "objectID": "index.html#california-law-enforcement-agencies",
-    "href": "index.html#california-law-enforcement-agencies",
-    "title": "Know Systemic Racism Data Site",
-    "section": "California Law Enforcement Agencies",
-    "text": "California Law Enforcement Agencies\n\nca-leas-data"
+    "objectID": "index.html#simple-sabotage-paper",
+    "href": "index.html#simple-sabotage-paper",
+    "title": "Know Systemic Racism Data Projects",
+    "section": "Simple Sabotage paper",
+    "text": "Simple Sabotage paper\nNothing here, yet! For an article we will write during summer 2023."
+  },
+  {
+    "objectID": "index.html#california-military-equipment-inventoryappurls-dataindex-data",
+    "href": "index.html#california-military-equipment-inventoryappurls-dataindex-data",
+    "title": "Know Systemic Racism Data Projects",
+    "section": "California Military Equipment Inventoryappurls-dataindex-data",
+    "text": "California Military Equipment Inventoryappurls-dataindex-data\nThis is the code and data for an app in development that makes information about military equipment used by California law enforcement agencies discoverable."
   }
 ]
