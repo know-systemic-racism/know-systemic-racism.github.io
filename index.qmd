@@ -1,37 +1,32 @@
 ---
-title: "Know Systemic Racism Data Site"
+title: "Know Systemic Racism Data Projects"
 ---
+All of the projects below are in active development. If you are interested in learning more about Know Systemic Racism, [see this post]9https://library.stanford.edu/blogs/stanford-libraries-blog/2021/08/introducing-know-systemic-racism-ksr-project) or contact Felicia Smith at felicias@stanford.edu
 
 
-## Knowledge Graph
-#### [knowledge-graph-data](https://github.com/know-systemic-racism/knowledge-graph-data)
-#### [knowledge-graph-query-app](https://github.com/know-systemic-racism/knowledge-graph-query-app)
 
-## California Map
-#### [ca-map-app](https://github.com/know-systemic-racism/ca-map-app)
+## California Law Enforcement Agencies [Data](https://github.com/know-systemic-racism/ca-leas-data)
+This is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories.
 
-## Policy Manuals
-#### [policy-manuals-data-scripts](https://github.com/know-systemic-racism/policy-manuals-data-scripts)
+## Knowledge Graph [data](https://github.com/know-systemic-racism/knowledge-graph-data) [App](https://github.com/know-systemic-racism/knowledge-graph-query-app)
+The Know Systemic Racism Knowledge Graph is a project to construct a richly connected graph of events, people, organizations, and people to reveal connections between discrete collections of data and the people behind the data. 
 
-## Stanford History Entities Data
-#### [stanford-history-entities-data](https://github.com/know-systemic-racism/stanford-history-entities-data)
+## California Map [app](https://github.com/know-systemic-racism/ca-map-app)
+Nothing here, yet! It's coming. 
 
-## Black@Stanford
-#### [black-at-stanford-chat-app](https://github.com/know-systemic-racism/black-at-stanford-chat-app)
-#### [black-at-stanford-qa-app](https://github.com/know-systemic-racism/black-at-stanford-qa-app)
+## Stanford Entities [data](https://github.com/know-systemic-racism/stanford-history-entities-data)
+This is the start of collecting graph data from Stanford-related library projects.
 
-## Digital Traces
-#### [digital-traces-2023-data](https://github.com/know-systemic-racism/digital-traces-2023-data)
-#### [digital-traces-app](https://github.com/know-systemic-racism/digital-traces-app)
+## Black@Stanford [app](https://github.com/know-systemic-racism/black-at-stanford-qa-app)[deprecated app](https://github.com/know-systemic-racism/black-at-stanford-chat-app)
+This is a prototype Question/Answer app that uses as the source a set of oral history transcripts from Black Stanford students and faculty.
 
-## Simple Sabotage
-#### [simple-sabotage](https://github.com/know-systemic-racism/simple-sabotage)
+## Digital Traces [data](https://github.com/know-systemic-racism/digital-traces-2023-data)
+[app](https://github.com/know-systemic-racism/digital-traces-app)
+This is based on work done during the winter 2023 course Digital Traces.
 
-## California Military Equipment Inventory
-#### [ca-mei-app](https://github.com/know-systemic-racism/ca-mei-app)
-#### [ca-mei-urls-data](https://github.com/know-systemic-racism/ca-mei-urls-data)
-#### [ca-mei-index-data](https://github.com/know-systemic-racism/ca-mei-index-data)
+## Simple Sabotage [paper](https://github.com/know-systemic-racism/simple-sabotage)
+Nothing here, yet! For an article we will write during summer 2023.
 
+## California Military Equipment Inventory[app](https://github.com/know-systemic-racism/ca-mei-app)[urls-data](https://github.com/know-systemic-racism/ca-mei-urls-data)[index-data](https://github.com/know-systemic-racism/ca-mei-index-data)
+This is the code and data for an app in development that makes information about military equipment used by California law enforcement agencies discoverable.
 
-## California Law Enforcement Agencies
-#### [ca-leas-data](https://github.com/know-systemic-racism/ca-leas-data)
