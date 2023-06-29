@@ -14,59 +14,59 @@
     "text": "All of the projects below are in active development. If you are interested in learning more about Know Systemic Racism, see this post or contact Felicia Smith at felicias@stanford.edu"
   },
   {
-    "objectID": "index.html#california-law-enforcement-agencies-data",
-    "href": "index.html#california-law-enforcement-agencies-data",
+    "objectID": "index.html#california-law-enforcement-agencies",
+    "href": "index.html#california-law-enforcement-agencies",
     "title": "Know Systemic Racism Data Projects",
-    "section": "California Law Enforcement Agencies data",
-    "text": "California Law Enforcement Agencies data\nThis is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories."
+    "section": "California Law Enforcement Agencies",
+    "text": "California Law Enforcement Agencies\n\ndata\nThis is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories."
   },
   {
-    "objectID": "index.html#knowledge-graph-data-app",
-    "href": "index.html#knowledge-graph-data-app",
+    "objectID": "index.html#knowledge-graph",
+    "href": "index.html#knowledge-graph",
     "title": "Know Systemic Racism Data Projects",
-    "section": "Knowledge Graph data | app",
-    "text": "Knowledge Graph data | app\nThe Know Systemic Racism Knowledge Graph is a project to construct a richly connected graph of events, people, organizations, and people to reveal connections between discrete collections of data and the people behind the data."
+    "section": "Knowledge Graph",
+    "text": "Knowledge Graph\n\ndata | app\nThe Know Systemic Racism Knowledge Graph is a project to construct a richly connected graph of events, people, organizations, and people to reveal connections between discrete collections of data and the people behind the data."
   },
   {
-    "objectID": "index.html#california-map-code",
-    "href": "index.html#california-map-code",
+    "objectID": "index.html#california-map",
+    "href": "index.html#california-map",
     "title": "Know Systemic Racism Data Projects",
-    "section": "California Map code",
-    "text": "California Map code\nNothing here, yet! It’s coming."
+    "section": "California Map",
+    "text": "California Map\n\ncode\nNothing here, yet! It’s coming."
   },
   {
-    "objectID": "index.html#stanford-entities-data",
-    "href": "index.html#stanford-entities-data",
+    "objectID": "index.html#stanford-entities",
+    "href": "index.html#stanford-entities",
     "title": "Know Systemic Racism Data Projects",
-    "section": "Stanford Entities data",
-    "text": "Stanford Entities data\nThis is the start of collecting graph data from Stanford-related library projects."
+    "section": "Stanford Entities",
+    "text": "Stanford Entities\n\ndata\nThis is the start of collecting graph data from Stanford-related library projects."
   },
   {
-    "objectID": "index.html#blackstanford-democode-deprecated-code",
-    "href": "index.html#blackstanford-democode-deprecated-code",
+    "objectID": "index.html#blackstanford",
+    "href": "index.html#blackstanford",
     "title": "Know Systemic Racism Data Projects",
-    "section": "Black@Stanford demo|code | deprecated code",
-    "text": "Black@Stanford demo|code | deprecated code\nThis is a prototype Question/Answer app that uses as the source a set of oral history transcripts from Black Stanford students and faculty."
+    "section": "Black@Stanford",
+    "text": "Black@Stanford\n\ndemo| code | deprecated code\nThis is a prototype Question/Answer app that uses as the source a set of oral history transcripts from Black Stanford students and faculty."
   },
   {
-    "objectID": "index.html#digital-traces-data-code",
-    "href": "index.html#digital-traces-data-code",
+    "objectID": "index.html#digital-traces",
+    "href": "index.html#digital-traces",
     "title": "Know Systemic Racism Data Projects",
-    "section": "Digital Traces data | code",
-    "text": "Digital Traces data | code\nThis is graph data and a conversational interface to a neo4j database to query the graph. It is based on work done during the winter 2023 course Digital Traces."
+    "section": "Digital Traces",
+    "text": "Digital Traces\n\ndata | code\nThis is graph data and a conversational interface to a neo4j database to query the graph. It is based on work done during the winter 2023 course Digital Traces."
   },
   {
-    "objectID": "index.html#simple-sabotage-paper",
-    "href": "index.html#simple-sabotage-paper",
+    "objectID": "index.html#simple-sabotage",
+    "href": "index.html#simple-sabotage",
     "title": "Know Systemic Racism Data Projects",
-    "section": "Simple Sabotage paper",
-    "text": "Simple Sabotage paper\nNothing here, yet! For an article we will write during summer 2023."
+    "section": "Simple Sabotage",
+    "text": "Simple Sabotage\n\npaper\nNothing here, yet! For an article we will write during summer 2023."
   },
   {
-    "objectID": "index.html#california-military-equipment-inventory-code-urls-data-index-data",
-    "href": "index.html#california-military-equipment-inventory-code-urls-data-index-data",
+    "objectID": "index.html#california-military-equipment-inventory",
+    "href": "index.html#california-military-equipment-inventory",
     "title": "Know Systemic Racism Data Projects",
-    "section": "California Military Equipment Inventory code | urls-data | index-data",
-    "text": "California Military Equipment Inventory code | urls-data | index-data\nThis is the code and data for an app in development that makes information about military equipment used by California law enforcement agencies discoverable."
+    "section": "California Military Equipment Inventory",
+    "text": "California Military Equipment Inventory\n\ncode | urls-data | index-data\nThis is the code and data for an app in development that makes information about military equipment used by California law enforcement agencies discoverable."
   }
 ]
