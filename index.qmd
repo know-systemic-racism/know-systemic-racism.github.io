@@ -1,6 +1,6 @@
 ---
 title: "Know Systemic Racism Data Projects"
----
+--- 
 
 All of the projects below are in active development. If you are interested in learning more about Know Systemic Racism, [see this post](https://library.stanford.edu/blogs/stanford-libraries-blog/2021/08/introducing-know-systemic-racism-ksr-project) or contact Felicia Smith at [felicias@stanford.edu](felicias@stanford.edu)
 
