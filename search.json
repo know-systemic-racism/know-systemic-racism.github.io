@@ -24,8 +24,8 @@
     "objectID": "index.html#knowledge-graph-data-app",
     "href": "index.html#knowledge-graph-data-app",
     "title": "Know Systemic Racism Data Projects",
-    "section": "Knowledge Graph data App",
-    "text": "Knowledge Graph data App\nThe Know Systemic Racism Knowledge Graph is a project to construct a richly connected graph of events, people, organizations, and people to reveal connections between discrete collections of data and the people behind the data."
+    "section": "Knowledge Graph data | App",
+    "text": "Knowledge Graph data | App\nThe Know Systemic Racism Knowledge Graph is a project to construct a richly connected graph of events, people, organizations, and people to reveal connections between discrete collections of data and the people behind the data."
   },
   {
     "objectID": "index.html#california-map-app",
@@ -42,18 +42,18 @@
     "text": "Stanford Entities data\nThis is the start of collecting graph data from Stanford-related library projects."
   },
   {
-    "objectID": "index.html#blackstanford-appdeprecated-app",
-    "href": "index.html#blackstanford-appdeprecated-app",
+    "objectID": "index.html#blackstanford-app-deprecated-app",
+    "href": "index.html#blackstanford-app-deprecated-app",
     "title": "Know Systemic Racism Data Projects",
-    "section": "Black@Stanford appdeprecated app",
-    "text": "Black@Stanford appdeprecated app\nThis is a prototype Question/Answer app that uses as the source a set of oral history transcripts from Black Stanford students and faculty."
+    "section": "Black@Stanford app | deprecated app",
+    "text": "Black@Stanford app | deprecated app\nThis is a prototype Question/Answer app that uses as the source a set of oral history transcripts from Black Stanford students and faculty."
   },
   {
     "objectID": "index.html#digital-traces-data",
     "href": "index.html#digital-traces-data",
     "title": "Know Systemic Racism Data Projects",
-    "section": "Digital Traces data",
-    "text": "Digital Traces data\napp This is based on work done during the winter 2023 course Digital Traces."
+    "section": "Digital Traces data |",
+    "text": "Digital Traces data |\napp This is based on work done during the winter 2023 course Digital Traces."
   },
   {
     "objectID": "index.html#simple-sabotage-paper",
@@ -63,10 +63,10 @@
     "text": "Simple Sabotage paper\nNothing here, yet! For an article we will write during summer 2023."
   },
   {
-    "objectID": "index.html#california-military-equipment-inventoryappurls-dataindex-data",
-    "href": "index.html#california-military-equipment-inventoryappurls-dataindex-data",
+    "objectID": "index.html#california-military-equipment-inventoryapp-urls-data-index-data",
+    "href": "index.html#california-military-equipment-inventoryapp-urls-data-index-data",
     "title": "Know Systemic Racism Data Projects",
-    "section": "California Military Equipment Inventoryappurls-dataindex-data",
-    "text": "California Military Equipment Inventoryappurls-dataindex-data\nThis is the code and data for an app in development that makes information about military equipment used by California law enforcement agencies discoverable."
+    "section": "California Military Equipment Inventoryapp | urls-data | index-data",
+    "text": "California Military Equipment Inventoryapp | urls-data | index-data\nThis is the code and data for an app in development that makes information about military equipment used by California law enforcement agencies discoverable."
   }
 ]
