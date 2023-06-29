@@ -5,7 +5,7 @@ title: "Know Systemic Racism Data Projects"
 All of the projects below are in active development. If you are interested in learning more about Know Systemic Racism, [see this post](https://library.stanford.edu/blogs/stanford-libraries-blog/2021/08/introducing-know-systemic-racism-ksr-project) or contact Felicia Smith at [felicias@stanford.edu](felicias@stanford.edu)
 
 
-## California Law Enforcement Agencies [data](https://github.com/know-systemic-racism/ca-leas-data)
+## California Law Enforcement Agencies [data](https://github.com/know-systemic-racism/ca-leas-data) 
 This is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories.
 
 ## Knowledge Graph [data](https://github.com/know-systemic-racism/knowledge-graph-data) | [app](https://github.com/know-systemic-racism/knowledge-graph-query-app)
