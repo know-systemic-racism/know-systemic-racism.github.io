@@ -20,8 +20,7 @@ This is the start of collecting graph data from Stanford-related library project
 ## Black@Stanford [app](https://github.com/know-systemic-racism/black-at-stanford-qa-app) | [deprecated app](https://github.com/know-systemic-racism/black-at-stanford-chat-app)
 This is a prototype Question/Answer app that uses as the source a set of oral history transcripts from Black Stanford students and faculty.
 
-## Digital Traces [data](https://github.com/know-systemic-racism/digital-traces-2023-data) | 
-[app](https://github.com/know-systemic-racism/digital-traces-app)
+## Digital Traces [data](https://github.com/know-systemic-racism/digital-traces-2023-data) | [app](https://github.com/know-systemic-racism/digital-traces-app)
 This is based on work done during the winter 2023 course Digital Traces.
 
 ## Simple Sabotage [paper](https://github.com/know-systemic-racism/simple-sabotage)
