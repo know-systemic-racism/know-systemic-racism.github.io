@@ -151,6 +151,31 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="california-map">California Map</h2>
 <section id="view-map-code" class="level4">
 <h4 class="anchored" data-anchor-id="view-map-code"><a href="https://know-systemic-racism.github.io/ca-map-cnty-bndry">view map</a> | <a href="https://github.com/know-systemic-racism/ca-map-app">code</a></h4>
+<!-- ``` {python} 
+from urllib.request import urlopen
+import json
+with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
+
+import pandas as pd
+# ** the file below is hosted locally but I could alternatively write code that removes all the non-CA fip codes from the DF 
+df = pd.read_csv("one_col_raw.githubusercontent.com_plotly_datasets_master_fips-unemp-16.csv",  
+                   dtype={"fips": str})
+
+import plotly.express as px
+
+fig = px.choropleth_mapbox(df, geojson=counties, locations='fips',
+                           color_continuous_scale="Viridis",
+                           range_color=(0, 12),
+                           mapbox_style="carto-positron",
+                           zoom=4.7, center = {"lat": 37.0902, "lon": -120.7129},
+                           opacity=0.5,
+                           labels={'unemp':'unemployment rate'}
+                          )
+fig.update_geos(fitbounds="locations", visible=False)
+fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+fig.show()
+``` -->
 <p><del>Nothing here, yet! It’s coming.</del> It’s here!</p>
 </section>
 </section>
