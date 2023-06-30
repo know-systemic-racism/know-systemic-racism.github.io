@@ -14,7 +14,8 @@ This is a list of California law enforcement agencies with coordinate locations 
 The Know Systemic Racism Knowledge Graph is a project to construct a richly connected graph of events, people, organizations, and people to reveal connections between discrete collections of data and the people behind the data. 
 
 ## California Map 
-#### [view map] (https://know-systemic-racism.github.io/ca-map-cnty-bndry) | [repo](https://github.com/know-systemic-racism/ca-map-app) | 
+#### [view map](https://know-systemic-racism.github.io/ca-map-cnty-bndry) | [code](https://github.com/know-systemic-racism/ca-map-app)
+
 ~~Nothing here, yet! It's coming.~~ It's here!
 
 ## Stanford Entities 
