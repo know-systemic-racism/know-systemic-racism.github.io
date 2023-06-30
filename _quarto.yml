@@ -17,6 +17,6 @@ format:
 
 execute:
   freeze: auto
-    debug: true
+  debug: true
 
 
