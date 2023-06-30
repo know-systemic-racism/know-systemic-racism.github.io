@@ -16,7 +16,6 @@ The Know Systemic Racism Knowledge Graph is a project to construct a richly conn
 ## California Map 
 #### [view map](https://know-systemic-racism.github.io/ca-map-cnty-bndry) | [code](https://github.com/know-systemic-racism/ca-map-app)
 ``` {python} 
-import nbformat
 from urllib.request import urlopen
 import json
 with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
