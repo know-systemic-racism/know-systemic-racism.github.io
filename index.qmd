@@ -15,7 +15,7 @@ The Know Systemic Racism Knowledge Graph is a project to construct a richly conn
 
 ## California Map 
 #### [view map](https://know-systemic-racism.github.io/ca-map-cnty-bndry) | [code](https://github.com/know-systemic-racism/ca-map-app)
-``` {python} 
+<!-- ``` {python} 
 from urllib.request import urlopen
 import json
 with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
@@ -39,7 +39,7 @@ fig = px.choropleth_mapbox(df, geojson=counties, locations='fips',
 fig.update_geos(fitbounds="locations", visible=False)
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
 fig.show()
-```
+``` -->
 ~~Nothing here, yet! It's coming.~~ It's here!
 
 ## Stanford Entities 
