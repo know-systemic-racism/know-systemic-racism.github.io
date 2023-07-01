@@ -25,8 +25,19 @@ import pandas as pd
 # ** the file below is hosted locally but I could alternatively write code that removes all the non-CA fip codes from the DF 
 df = pd.read_csv("one_col_raw.githubusercontent.com_plotly_datasets_master_fips-unemp-16.csv",  
                    dtype={"fips": str})
+df_scatter = pd.read_csv("LEA-20230424.csv",  
+                   dtype={"fips": str})
 
 import plotly.express as px
+
+fig_scatter = px.scatter_mapbox(df_scatter, lat='Latitude', lon='Longitude',
+                  # color="Policy_Manual_Exists", 
+                  # size="car_hours",
+                  labels={'LEA_Type': 'LEA Type', 'Mil_Equip_Policy_Exists' : 'Military Equipment Policy Exists', 'Policy_Manual_Exists' : 'Policy Manual Exists','QA_Policy_Manual': 'Policy Manual Link'},  # replaces left hand name with right hand name in hover
+                  hover_name='LEA_Name',
+                  hover_data=['City', 'County', 'Site', 'LEA_Type', 'Mil_Equip_Policy_Exists', 'Military Equipment Inventory Exists', 'Policy_Manual_Exists', 'QA_Policy_Manual', ],
+                  color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10,
+                  mapbox_style="carto-positron")
 
 fig = px.choropleth_mapbox(df, geojson=counties, locations='fips',
                            color_continuous_scale="Viridis",
@@ -34,10 +45,12 @@ fig = px.choropleth_mapbox(df, geojson=counties, locations='fips',
                            mapbox_style="carto-positron",
                            zoom=4.7, center = {"lat": 37.0902, "lon": -120.7129},
                            opacity=0.5,
-                           labels={'unemp':'unemployment rate'}
                           )
 fig.update_geos(fitbounds="locations", visible=False)
 fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+fig.add_trace(
+    fig_scatter.data[0]
+)
 fig.show()
 ```
 ~~Nothing here, yet! It's coming.~~ It's here!
