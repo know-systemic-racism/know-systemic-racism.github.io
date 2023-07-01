@@ -8,6 +8,11 @@
 5. Review updates on the [website](https://know-systemic-racism.github.io/). **_Note_**: webpage takes ~ 1 minute to update
 
 
+## Error with your commit?
+1. Click on the "Actions" tab
+2. Click on your commit that failed
+3. Click on the "build-deploy" button in the publish.yml section
+   - Here, you will find your actual error along with a call stack!
 
 
 ## Source files and the pages they correspond to:
