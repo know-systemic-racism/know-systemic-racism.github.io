@@ -6,8 +6,35 @@ All of the projects below are in active development. If you are interested in le
 
 
 ## California Law Enforcement Agencies
-#### [data](https://github.com/know-systemic-racism/ca-leas-data) | [search](https://know-systemic-racism.github.io/lea-search-bar")
+#### [data](https://github.com/know-systemic-racism/ca-leas-data) | [search](https://know-systemic-racism.github.io/lea-search-bar)
 This is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories.
+```{python}
+import pandas as pd
+df = pd.read_csv("LEA-20230424.csv")
+
+# prompt user to enter a zip code, city, or police department name
+def click_btn():
+    search_term = input("Enter a zip code, city, or police department:")
+    # select rows where city is == search_term
+    if (('Department' or 'Attorney' or 'Police' or 'Office' or 'Sheriff') in search_term):
+        rows = df.loc[df['LEA_Name'] == search_term]
+    else: 
+        rows = df.loc[df['City'] == search_term]
+    display(rows)
+    # print(rows['LEA_Name'], rows['LEA_Type'], rows['Site'], rows['QA_Policy_Manual']) 
+
+    
+# Button functionality (borrowed from GeeksForGeeks)
+from tkinter import *   # import everything from tkinter module
+ 
+root = Tk()   # create a tkinter window      
+root.geometry('100x100')    # Open window having dimension 100x100
+btn = Button(root, text = 'Click me !', bd = '5',    # Create a Button
+                          command = click_btn)     
+btn.pack(side = 'top')     # Set the position of button on the top of window. 
+ 
+root.mainloop()
+```
 
 ## Knowledge Graph 
 #### [data](https://github.com/know-systemic-racism/knowledge-graph-data) | [app](https://github.com/know-systemic-racism/knowledge-graph-query-app)
