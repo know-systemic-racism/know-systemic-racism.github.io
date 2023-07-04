@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>know-systemic-racism - A Search Bar To Search Information About California LEA’s</title>
+<title>know-systemic-racism - Search Bar To Search Information About California LEA’s</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -93,9 +93,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -145,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">A Search Bar To Search Information About California LEA’s</h1>
+<h1 class="title">Search Bar To Search Information About California LEA’s</h1>
 </div>
 
 
@@ -169,289 +166,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># prompt user to enter a zip code, city, or police department name</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>search_term <span class="op">=</span> <span class="st">""</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>search_term <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a zip code, city, or police department:"</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(search_term <span class="op">!=</span> <span class="st">'q'</span>): </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># select rows where city is == search_term</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> ((<span class="st">'Department'</span> <span class="kw">or</span> <span class="st">'Attorney'</span> <span class="kw">or</span> <span class="st">'Police'</span> <span class="kw">or</span> <span class="st">'Office'</span> <span class="kw">or</span> <span class="st">'Sheriff'</span>) <span class="kw">in</span> search_term):</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        rows <span class="op">=</span> df.loc[df[<span class="st">'LEA_Name'</span>] <span class="op">==</span> search_term]</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>: </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        rows <span class="op">=</span> df.loc[df[<span class="st">'City'</span>] <span class="op">==</span> search_term]</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="bu">len</span>(rows) <span class="op">==</span> <span class="dv">0</span>):</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Couldn't find any matches. Please double-check your spelling and capitalization"</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>: </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        display(rows)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    search_term <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a zip code, city, or police department:"</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># print(df.loc[df['Zip_Code'] == 91706])</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> search_term <span class="op">!=</span> <span class="st">'q'</span>: </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="co"># for zip code searches</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> search_term.isdigit():</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        rows <span class="op">=</span> df.loc[df[<span class="st">'Zip_Code'</span>] <span class="op">==</span> <span class="bu">int</span>(search_term)]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># for exact LEA name searches</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="st">'Department'</span> <span class="kw">or</span> <span class="st">'Attorney'</span> <span class="kw">or</span> <span class="st">'Police'</span> <span class="kw">or</span> <span class="st">'Office'</span> <span class="kw">or</span> <span class="st">'Sheriff'</span>) <span class="kw">in</span> search_term:</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        rows <span class="op">=</span> df.loc[df[<span class="st">'LEA_Name'</span>] <span class="op">==</span> search_term]</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># for city searches</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>: </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        rows <span class="op">=</span> df.loc[df[<span class="st">'City'</span>] <span class="op">==</span> search_term]</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="bu">len</span>(rows) <span class="op">==</span> <span class="dv">0</span>):</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"Couldn't find any matches. Please double-check your spelling and capitalization"</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>: </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        display(rows)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    search_term <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a zip code, city, or police department:"</span>)</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
+<div class="cell-output cell-output-stdin">
+<pre><code>Enter a zip code, city, or police department: 91706</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Enter a zip code, city, or police department: Los Angeles
-Enter a zip code, city, or police department: nsfg
+<pre><code>enter
 Couldn't find any matches. Please double-check your spelling and capitalization</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Ref</th>
-<th data-quarto-table-cell-role="th">LEA_Name</th>
-<th data-quarto-table-cell-role="th">Reference</th>
-<th data-quarto-table-cell-role="th">Contract</th>
-<th data-quarto-table-cell-role="th">POST Participating</th>
-<th data-quarto-table-cell-role="th">City</th>
-<th data-quarto-table-cell-role="th">Latitude</th>
-<th data-quarto-table-cell-role="th">Longitude</th>
-<th data-quarto-table-cell-role="th">County</th>
-<th data-quarto-table-cell-role="th">State</th>
-<th data-quarto-table-cell-role="th">Zip_Code</th>
-<th data-quarto-table-cell-role="th">LEA_Type</th>
-<th data-quarto-table-cell-role="th">Site</th>
-<th data-quarto-table-cell-role="th">Policy_Manual_Exists</th>
-<th data-quarto-table-cell-role="th">Mil_Equip_Policy_Exists</th>
-<th data-quarto-table-cell-role="th">Military Equipment Inventory Exists</th>
-<th data-quarto-table-cell-role="th">QA_Policy_Manual</th>
-<th data-quarto-table-cell-role="th">QA_Mil_Equip_Policy</th>
-<th data-quarto-table-cell-role="th">QA Mil_Equip_Inventory (if separate)</th>
-<th data-quarto-table-cell-role="th">Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">140</td>
-<td>SB978-130</td>
-<td>Cal State LA Police Department</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>yes</td>
-<td>Los Angeles</td>
-<td>34.05357</td>
-<td>-118.2454</td>
-<td>Los Angeles County</td>
-<td>California</td>
-<td>NaN</td>
-<td>College/University</td>
-<td>https://www.calstatela.edu</td>
-<td>True</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>https://www.calstatela.edu/police/policies-and...</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">256</td>
-<td>SB978-280</td>
-<td>Los Angeles City Department of Recreation and ...</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>yes</td>
-<td>Los Angeles</td>
-<td>34.05357</td>
-<td>-118.2454</td>
-<td>Los Angeles County</td>
-<td>California</td>
-<td>NaN</td>
-<td>Parks</td>
-<td>https://www.laparks.org</td>
-<td>True</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>https://www.laparks.org/sites/default/files/ra...</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>No muckrock request</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">257</td>
-<td>SB978-281</td>
-<td>Los Angeles County District Attorney</td>
-<td>NaN</td>
-<td>no</td>
-<td>yes</td>
-<td>Los Angeles</td>
-<td>34.05357</td>
-<td>-118.2454</td>
-<td>Los Angeles County</td>
-<td>California</td>
-<td>NaN</td>
-<td>District Attorney</td>
-<td>http://da.lacounty.gov</td>
-<td>True</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>https://da.lacounty.gov/sites/default/files/pd...</td>
-<td>FALSE</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">258</td>
-<td>SB978-282</td>
-<td>Los Angeles County Probation Department</td>
-<td>NaN</td>
-<td>no</td>
-<td>no</td>
-<td>Los Angeles</td>
-<td>34.05357</td>
-<td>-118.2454</td>
-<td>Los Angeles County</td>
-<td>California</td>
-<td>NaN</td>
-<td>Probation</td>
-<td>https://probation.lacounty.gov</td>
-<td>True</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>https://file.lacounty.gov/SDSInter/probation/1...</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>See here for links to more policies: https://p...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">259</td>
-<td>SB978-283</td>
-<td>Los Angeles County Sheriff's Department</td>
-<td>NaN</td>
-<td>no</td>
-<td>yes</td>
-<td>Los Angeles</td>
-<td>34.05357</td>
-<td>-118.2454</td>
-<td>Los Angeles County</td>
-<td>California</td>
-<td>NaN</td>
-<td>Sheriff</td>
-<td>http://pars.lasd.org</td>
-<td>True</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>https://pars.lasd.org/Viewer/Manuals/10008</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>LACS has their policy in a cumbersome file man...</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">260</td>
-<td>SB978-284</td>
-<td>Los Angeles Police Department</td>
-<td>NaN</td>
-<td>no</td>
-<td>yes</td>
-<td>Los Angeles</td>
-<td>34.05357</td>
-<td>-118.2454</td>
-<td>Los Angeles County</td>
-<td>California</td>
-<td>NaN</td>
-<td>Police</td>
-<td>https://lapdonline.org</td>
-<td>True</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>https://www.lapdonline.org/policies-procedures...</td>
-<td>https://lapdonlinestrgeacc.blob.core.usgovclou...</td>
-<td>NaN</td>
-<td>These documents are scanned and skewed. Not a ...</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">261</td>
-<td>SB978-285</td>
-<td>Los Angeles Port Police Department</td>
-<td>NaN</td>
-<td>no</td>
-<td>yes</td>
-<td>Los Angeles</td>
-<td>34.05357</td>
-<td>-118.2454</td>
-<td>Los Angeles County</td>
-<td>California</td>
-<td>NaN</td>
-<td>Port</td>
-<td>https://www.portoflosangeles.org/community/los...</td>
-<td>True</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>https://kentico.portoflosangeles.org/getmedia/...</td>
-<td>https://kentico.portoflosangeles.org/getmedia/...</td>
-<td>https://kentico.portoflosangeles.org/getmedia/...</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">262</td>
-<td>SB978-287</td>
-<td>Los Angeles School Police Department</td>
-<td>NaN</td>
-<td>no</td>
-<td>yes</td>
-<td>Los Angeles</td>
-<td>34.05357</td>
-<td>-118.2454</td>
-<td>Los Angeles County</td>
-<td>California</td>
-<td>NaN</td>
-<td>School</td>
-<td>https://achieve.lausd.net</td>
-<td>True</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>https://achieve.lausd.net/cms/lib/CA01000043/C...</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">263</td>
-<td>SB978-289</td>
-<td>Los Angeles World Airports Police Department</td>
-<td>NaN</td>
-<td>no</td>
-<td>yes</td>
-<td>Los Angeles</td>
-<td>34.05357</td>
-<td>-118.2454</td>
-<td>Los Angeles County</td>
-<td>California</td>
-<td>NaN</td>
-<td>Airport</td>
-<td>https://www.lawa.org</td>
-<td>True</td>
-<td>FALSE</td>
-<td>FALSE</td>
-<td>https://public.powerdms.com/lawa/tree</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">458</td>
-<td>SB978-584</td>
-<td>UC Los Angeles Police Department</td>
-<td>NaN</td>
-<td>no</td>
-<td>yes</td>
-<td>Los Angeles</td>
-<td>34.05357</td>
-<td>-118.2454</td>
-<td>Los Angeles County</td>
-<td>California</td>
-<td>NaN</td>
-<td>College/University</td>
-<td>https://www.police.ucla.edu</td>
-<td>True</td>
-<td>TRUE</td>
-<td>TRUE</td>
-<td>https://ucla.box.com/v/UCPDPolicyManual</td>
-<td>https://ucla.app.box.com/v/706MilitaryEquipment</td>
-<td>https://ucla.app.box.com/v/AB481UCEquipment</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-</div>
 </div>
 </div>
 
