@@ -14,7 +14,11 @@ data = FileAttachment("LEA-20230424.csv").csv({ typed: true })
 ```
 
 ```{ojs}
-viewof search = Inputs.search(data, {placeholder: "Enter a zip code, county, city, or police department name", width: 900})
+viewof search = Inputs.search(data, 
+{placeholder: "Enter a zip code, county, city, or police department name", 
+width: 900,
+label: "Search LEAs"
+})
 ```
 
 ```{ojs}
@@ -35,6 +39,6 @@ viewof rows = Inputs.table(search, {
   },
   format: {
     Zip_Code: x => x.toFixed(0),
-  }
+  },
 })
 ```
