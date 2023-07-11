@@ -1,0 +1,40 @@
+---
+title: "Search for California Law Enforcement Agencies (LEA)"
+--- 
+
+This is a list of California law enforcement agencies that we have gathered and curated for the purpose of finding and tracking policy manuals and military equipment inventories. This list of LEAs was obtained from the [California's Commision on Police Officer Standards and Training](https://post.ca.gov/le-agencies)
+
+### **Notes**
+- MEP = Military Equipment Policy
+- MEI = Military Equipment Inventory
+
+
+```{ojs}
+data = FileAttachment("LEA-20230424.csv").csv({ typed: true })
+```
+
+```{ojs}
+viewof search = Inputs.search(data, {placeholder: "Enter a zip code, county, city, or police department name", width: 900})
+```
+
+```{ojs}
+viewof rows = Inputs.table(search, {
+  header: {
+    Ref: "Reference Number",
+    LEA_Name: "LEA Name",
+    Exact_Address: "Exact Address",
+    Zip_Code: "Zip Code",
+    LEA_Type: "LEA Type",
+    Site: "LEA Website",
+    Policy_Manual_Exists: "Policy Manual Exists?",
+    Mil_Equip_Policy_Exists: "MEP Exists?",
+    "Military Equipment Inventory Exists": "MEI Exists?",
+    QA_Policy_Manual: "QA Policy Manual Link",
+    QA_Mil_Equip_Policy: "QA MEP Link",
+    "QA Mil_Equip_Inventory (if separate)": "QA MEI Link (if separate)"
+  },
+  format: {
+    Zip_Code: x => x.toFixed(0),
+  }
+})
+```
