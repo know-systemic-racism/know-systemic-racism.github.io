@@ -7,13 +7,6 @@
     "text": "About this site"
   },
   {
-    "objectID": "ca-map-cnty-bndry.html",
-    "href": "ca-map-cnty-bndry.html",
-    "title": "California Map With County Boundaries",
-    "section": "",
-    "text": "Code\nfrom urllib.request import urlopen\nimport json\nwith urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:\n    counties = json.load(response)\n\nimport pandas as pd\n# ** the file below is hosted locally but I could alternatively write code that removes all the non-CA fip codes from the DF \ndf = pd.read_csv(\"one_col_raw.githubusercontent.com_plotly_datasets_master_fips-unemp-16.csv\",  \n                   dtype={\"fips\": str})\ndf_scatter = pd.read_csv(\"LEA-20230424.csv\",  \n                   dtype={\"fips\": str})\n\nimport plotly.express as px\n\nfig_scatter = px.scatter_mapbox(df_scatter, lat='Latitude', lon='Longitude',\n                  # color=\"Policy_Manual_Exists\", \n                  # size=\"car_hours\",\n                  labels={'LEA_Type': 'LEA Type', 'Mil_Equip_Policy_Exists' : 'Military Equipment Policy Exists', 'Policy_Manual_Exists' : 'Policy Manual Exists','QA_Policy_Manual': 'Policy Manual Link'},  # replaces left hand name with right hand name in hover\n                  hover_name='LEA_Name',\n                  hover_data=['City', 'County', 'Site', 'LEA_Type', 'Mil_Equip_Policy_Exists', 'Military Equipment Inventory Exists', 'Policy_Manual_Exists', 'QA_Policy_Manual', ],\n                  color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10,\n                  mapbox_style=\"carto-positron\")\n\nfig = px.choropleth_mapbox(df, geojson=counties, locations='fips',\n                           color_continuous_scale=\"Viridis\",\n                           range_color=(0, 12),\n                           mapbox_style=\"carto-positron\",\n                           zoom=4.7, center = {\"lat\": 37.0902, \"lon\": -120.7129},\n                           opacity=0.5,\n                          )\nfig.update_geos(fitbounds=\"locations\", visible=False)\nfig.update_layout(margin={\"r\":0,\"t\":0,\"l\":0,\"b\":0})\nfig.add_trace(\n    fig_scatter.data[0]\n)\nfig.show()"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Know Systemic Racism Data Projects",
@@ -77,6 +70,13 @@
     "text": "California Military Equipment Inventory\n\ncode | urls-data | index-data\nThis is the code and data for an app in development that makes information about military equipment used by California law enforcement agencies discoverable."
   },
   {
+    "objectID": "ca-map-cnty-bndry.html",
+    "href": "ca-map-cnty-bndry.html",
+    "title": "California Map With County Boundaries",
+    "section": "",
+    "text": "Code\nfrom urllib.request import urlopen\nimport json\nwith urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:\n    counties = json.load(response)\n\nimport pandas as pd\n# ** the file below is hosted locally but I could alternatively write code that removes all the non-CA fip codes from the DF \ndf = pd.read_csv(\"one_col_raw.githubusercontent.com_plotly_datasets_master_fips-unemp-16.csv\",  \n                   dtype={\"fips\": str})\ndf_scatter = pd.read_csv(\"LEA-20230424.csv\",  \n                   dtype={\"fips\": str})\n\nimport plotly.express as px\n\nfig_scatter = px.scatter_mapbox(df_scatter, lat='Latitude', lon='Longitude',\n                  # color=\"Policy_Manual_Exists\", \n                  # size=\"car_hours\",\n                  labels={'LEA_Type': 'LEA Type', 'Mil_Equip_Policy_Exists' : 'Military Equipment Policy Exists', 'Policy_Manual_Exists' : 'Policy Manual Exists','QA_Policy_Manual': 'Policy Manual Link'},  # replaces left hand name with right hand name in hover\n                  hover_name='LEA_Name',\n                  hover_data=['City', 'County', 'Site', 'LEA_Type', 'Mil_Equip_Policy_Exists', 'Military Equipment Inventory Exists', 'Policy_Manual_Exists', 'QA_Policy_Manual', ],\n                  color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10,\n                  mapbox_style=\"carto-positron\")\n\nfig = px.choropleth_mapbox(df, geojson=counties, locations='fips',\n                           color_continuous_scale=\"Viridis\",\n                           range_color=(0, 12),\n                           mapbox_style=\"carto-positron\",\n                           zoom=4.7, center = {\"lat\": 37.0902, \"lon\": -120.7129},\n                           opacity=0.5,\n                          )\nfig.update_geos(fitbounds=\"locations\", visible=False)\nfig.update_layout(margin={\"r\":0,\"t\":0,\"l\":0,\"b\":0})\nfig.add_trace(\n    fig_scatter.data[0]\n)\nfig.show()"
+  },
+  {
     "objectID": "lea-search-bar.html",
     "href": "lea-search-bar.html",
     "title": "Search Bar To Search Information About California LEA’s",
@@ -88,6 +88,20 @@
     "href": "search-bar.html",
     "title": "Search for California Law Enforcement Agencies (LEA)",
     "section": "",
-    "text": "This is a list of California law enforcement agencies that we have gathered and curated for the purpose of finding and tracking policy manuals and military equipment inventories. This list of LEAs was obtained from the California’s Commision on Police Officer Standards and Training\n\nNotes\n\nMEP = Military Equipment Policy\nMEI = Military Equipment Inventory\n\n\n\nCode\ndata = FileAttachment(\"LEA-20230424.csv\").csv({ typed: true })\n\n\n\n\n\n\n\n\n\nCode\nviewof search = Inputs.search(data, \n{placeholder: \"Enter a zip code, county, city, or police department name\", \nwidth: 900,\nlabel: \"Search LEAs\"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof rows = Inputs.table(search, {\n  header: {\n    Ref: \"Reference Number\",\n    LEA_Name: \"LEA Name\",\n    Exact_Address: \"Exact Address\",\n    Zip_Code: \"Zip Code\",\n    LEA_Type: \"LEA Type\",\n    Site: \"LEA Website\",\n    Policy_Manual_Exists: \"Policy Manual Exists?\",\n    Mil_Equip_Policy_Exists: \"MEP Exists?\",\n    \"Military Equipment Inventory Exists\": \"MEI Exists?\",\n    QA_Policy_Manual: \"QA Policy Manual Link\",\n    QA_Mil_Equip_Policy: \"QA MEP Link\",\n    \"QA Mil_Equip_Inventory (if separate)\": \"QA MEI Link (if separate)\"\n  },\n  format: {\n    Zip_Code: x =&gt; x.toFixed(0),\n  },\n})"
+    "text": "This is a list of California law enforcement agencies that we have gathered and curated for the purpose of finding and tracking policy manuals and military equipment inventories. This list of LEAs was obtained from the California’s Commision on Police Officer Standards and Training"
+  },
+  {
+    "objectID": "search-bar.html#search-by-keyword",
+    "href": "search-bar.html#search-by-keyword",
+    "title": "Search for California Law Enforcement Agencies (LEA)",
+    "section": "Search By Keyword",
+    "text": "Search By Keyword\n\nNotes\n\nMEP = Military Equipment Policy\nMEI = Military Equipment Inventory\n\n\n\nCode\ndata = FileAttachment(\"LEA-20230424.csv\").csv({ typed: true })\n\nviewof search = Inputs.search(data, \n{placeholder: \"Enter a zip code, county, city, or police department name\", \nwidth: 900,\nlabel: \"Search LEAs\"\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof rows = Inputs.table(search, {\n  header: {\n    Ref: \"Reference Number\",\n    LEA_Name: \"LEA Name\",\n    Exact_Address: \"Exact Address\",\n    Zip_Code: \"Zip Code\",\n    LEA_Type: \"LEA Type\",\n    Site: \"LEA Website\",\n    Policy_Manual_Exists: \"Policy Manual Exists?\",\n    Mil_Equip_Policy_Exists: \"MEP Exists?\",\n    \"Military Equipment Inventory Exists\": \"MEI Exists?\",\n    QA_Policy_Manual: \"QA Policy Manual Link\",\n    QA_Mil_Equip_Policy: \"QA MEP Link\",\n    \"QA Mil_Equip_Inventory (if separate)\": \"QA MEI Link (if separate)\"\n  },\n  format: {\n    Zip_Code: x =&gt; x.toFixed(0),\n  },\n})"
+  },
+  {
+    "objectID": "search-bar.html#search-by-map-under-construction",
+    "href": "search-bar.html#search-by-map-under-construction",
+    "title": "Search for California Law Enforcement Agencies (LEA)",
+    "section": "Search By Map (under construction…)",
+    "text": "Search By Map (under construction…)\n\n\nCode\ngeo = require(\"geoverview@1.2.1\")\ntopojson = require(\"topojson\")\nus = FileAttachment(\"ca_counties_geoverview.json\").json()\nairportsJson = FileAttachment(\"airports.geojson\").json()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncounties = topojson.feature(us, us.objects.counties)\n\n\n\n\n\n\n\n\n\nCode\ngeo.view(counties, {width: 900})\n\n\n\n\n\n\n\n\n\nCode\ngeo.view(airportsJson)\n\n\n\n\n\n\n\n\n\n\n\nCode\nbertin = require(\"bertin@1.2.4\")\n\n\n\n\n\n\n\n\n\nCode\nbertin.quickdraw(counties)"
   }
 ]
