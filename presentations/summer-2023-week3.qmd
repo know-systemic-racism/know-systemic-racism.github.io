@@ -1,14 +1,11 @@
 ---
 
+title: Summer 2023 Data Team {background-iframe=“networkiframe/index.html”}
 preload-iframes: true
 format: revealjs
 
 ---
 
-# Summer 2023 Data Team {background-iframe=“networkiframe/index.html”}
-
-
----
 
 # The Team
 
