@@ -24,7 +24,7 @@ format: revealjs
 
 ::: {.column width="50%"}
 
-Chloe Williams
+## Chloe Williams
 - Data collection
 - Data analysis
 - Data schema design
