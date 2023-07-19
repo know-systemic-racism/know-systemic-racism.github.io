@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>know-systemic-racism – workplan-summer-2023</title>
+<title>know-systemic-racism - Week 5: Working together at Stanford</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -143,9 +143,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 5: Working together at Stanford</h1>
+</div>
 
 
-<div class="cell" data-execution_count="46">
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell" data-execution_count="69">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -154,13 +169,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># target _blank to open new window</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">'&lt;a target="_blank" href="</span><span class="sc">{}</span><span class="st">"&gt;</span><span class="sc">{}</span><span class="st">&lt;/a&gt;'</span>.<span class="bu">format</span>(val, val)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sheet_url <span class="op">=</span> <span class="st">'https://docs.google.com/spreadsheets/d/1IfK0gInyBM9KOhrxglCBqPp13fyX6ZjXVCQJDj-WGck/edit#gid=0'</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>sheet_url <span class="op">=</span> <span class="st">'https://docs.google.com/spreadsheets/d/1G4WIcWJK9c1OKdaeDTRwDgDaJkAqAd-IcUrFwmLr04k/edit#gid=58406731'</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>url_1 <span class="op">=</span> sheet_url.replace(<span class="st">'/edit#gid='</span>, <span class="st">'/export?format=csv&amp;gid='</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(url_1)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df.loc[:, <span class="op">~</span>df.columns.isin([<span class="st">'Unnamed: 6'</span>, <span class="st">'Unnamed: 7'</span>, <span class="st">'Unnamed: 8'</span>])]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pd.read_csv(url_1)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#df.loc[:, ~df.columns.isin(['Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8'])]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="46">
+<div id="week-5" class="cell-output cell-output-display" data-execution_count="69">
 <div>
 
 
@@ -168,50 +183,92 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">Dataset</th>
-<th data-quarto-table-cell-role="th">Victims anonymized?</th>
-<th data-quarto-table-cell-role="th">Date range</th>
-<th data-quarto-table-cell-role="th">Size</th>
-<th data-quarto-table-cell-role="th">Data type</th>
-<th data-quarto-table-cell-role="th">Location of injury data?</th>
-<th data-quarto-table-cell-role="th">Access Links</th>
+<th data-quarto-table-cell-role="th">Time</th>
+<th data-quarto-table-cell-role="th">Monday</th>
+<th data-quarto-table-cell-role="th">Tuesday</th>
+<th data-quarto-table-cell-role="th">Wednesday</th>
+<th data-quarto-table-cell-role="th">Thursday</th>
+<th data-quarto-table-cell-role="th">Friday</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
-<td>NOIHD</td>
-<td>True</td>
-<td>2000-2017</td>
-<td>Huge</td>
-<td>Stata file</td>
-<td>True (but general location, probably at city-l...</td>
-<td>https://drive.google.com/drive/folders/1JeXad_...</td>
+<td>PROGRAM</td>
+<td>Policy Manuals Day</td>
+<td>Military Equipment Policy Day</td>
+<td>Simple Sabotage Day</td>
+<td>App Building Day</td>
+<td>Wrap Up</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>Fatal Encounters</td>
-<td>False</td>
-<td>2000-2021</td>
-<td>Big</td>
-<td>CSV</td>
-<td>True (as exact as possible)</td>
-<td>https://docs.google.com/spreadsheets/d/1dKmaV_...</td>
+<td>9:00-10:00</td>
+<td>Meeting - Chloe, Anabelle, Nicole</td>
+<td>Dig in to Military Equipment policies</td>
+<td>Index issues around access to manuals, data.</td>
+<td>Humanize the harm of militarization</td>
+<td>Our plan for the next few weeks</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>Washington Post</td>
-<td>False</td>
-<td>2015-2023</td>
-<td>Smallest</td>
-<td>CSV or JSON</td>
-<td>NaN</td>
-<td>https://www.washingtonpost.com/graphics/invest...</td>
+<td>10:00 - 11:00</td>
+<td>Review California LEA Policy Manuals</td>
+<td>Gather sources of evidence of Military equipme...</td>
+<td>Define standards for publishing military equip...</td>
+<td>Do these exists in my city, town, neighborhood?</td>
+<td>...</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>11:00 - 12:00</td>
+<td>CRJ-KSR Meeting</td>
+<td>Military Equipment</td>
+<td>...</td>
+<td>Community Hour</td>
+<td>Workshop: Rochelle Lundy</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>12:00 - 1:00</td>
+<td>Lunch</td>
+<td>Lunch with Regina Roberts</td>
+<td>Field Trip</td>
+<td>Lunch</td>
+<td>CESTA interns lunch</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>1:00 - 2:00</td>
+<td>Use LLM</td>
+<td>Military Equiment into Wikidata/Wikimedia</td>
+<td>to</td>
+<td>APP</td>
+<td>Breathe</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>2:00 - 3:00</td>
+<td>to ask questions of</td>
+<td>More MEI</td>
+<td>Computer History</td>
+<td>APP</td>
+<td>Nicole and Chloe depart for SFO</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>3:00 - 4:00</td>
+<td>Lexipol Policy Manuals</td>
+<td>AFSC Meeting</td>
+<td>Museum</td>
+<td>APP</td>
+<td>FLYING</td>
 </tr>
 </tbody>
 </table>
 
 </div>
+<p>Scheduled activities for the week</p>
 </div>
 </div>
 
