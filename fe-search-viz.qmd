@@ -1,5 +1,7 @@
 ---
 title: "Searching and Visualizing Fatal Encounters Dataset"
+execute:
+  echo: false
 --- 
 
 These tables and visualizations are generated using the [Fatal Encounters Dataset](https://docs.google.com/spreadsheets/d/1dKmaV_JiWcG8XBoRgP8b4e9Eopkpgt7FL7nyspvzAsE/edit#gid=0) from [fatalencounters.org](https://fatalencounters.org/). As seen in the bar charts, this dataset ranges from 2000-2021.
