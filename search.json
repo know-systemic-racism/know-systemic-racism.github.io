@@ -84,6 +84,13 @@
     "text": "California Military Equipment Inventory\n\ncode | urls-data | index-data\nThis is the code and data for an app in development that makes information about military equipment used by California law enforcement agencies discoverable."
   },
   {
+    "objectID": "Workplan Summer 2023.html",
+    "href": "Workplan Summer 2023.html",
+    "title": "know-systemic-racism",
+    "section": "",
+    "text": "Code\nimport pandas as pd\n\ndef make_clickable(val):\n    # target _blank to open new window\n    return '&lt;a target=\"_blank\" href=\"{}\"&gt;{}&lt;/a&gt;'.format(val, val)\n\nsheet_url = 'https://docs.google.com/spreadsheets/d/1IfK0gInyBM9KOhrxglCBqPp13fyX6ZjXVCQJDj-WGck/edit#gid=0'\nurl_1 = sheet_url.replace('/edit#gid=', '/export?format=csv&gid=')\n\ndf = pd.read_csv(url_1)\ndf.loc[:, ~df.columns.isin(['Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8'])]\n\n\n\n\n\n\n\n\n\nDataset\nVictims anonymized?\nDate range\nSize\nData type\nLocation of injury data?\nAccess Links\n\n\n\n\n0\nNOIHD\nTrue\n2000-2017\nHuge\nStata file\nTrue (but general location, probably at city-l...\nhttps://drive.google.com/drive/folders/1JeXad_...\n\n\n1\nFatal Encounters\nFalse\n2000-2021\nBig\nCSV\nTrue (as exact as possible)\nhttps://docs.google.com/spreadsheets/d/1dKmaV_...\n\n\n2\nWashington Post\nFalse\n2015-2023\nSmallest\nCSV or JSON\nNaN\nhttps://www.washingtonpost.com/graphics/invest..."
+  },
+  {
     "objectID": "presentations/summer-2023-week3.html",
     "href": "presentations/summer-2023-week3.html",
     "title": "The Team",
