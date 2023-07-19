@@ -43,6 +43,97 @@ viewof rows = Inputs.table(search, {
 })
 ```
 
+## Search Fatal Encounters Dataset
+```{python}
+import pandas as pd
+sheet_id = "1dKmaV_JiWcG8XBoRgP8b4e9Eopkpgt7FL7nyspvzAsE"
+sheet_name = "sample_1"
+url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
+df = pd.read_csv(url)
+ojs_define(fe_data = df)
+```
+
+```{ojs}
+viewof fe_search = Inputs.search(transpose(fe_data), 
+{placeholder: "Enter a name, zip code, county, city, or police department name", 
+width: 900,
+label: "Search LEAs"
+})
+```
+
+```{ojs}
+viewof fe_rows = Inputs.table(fe_search, {
+  columns: [
+    'Unique ID',
+    'Name',
+    'Age',
+    'Gender',
+    'Race',
+    'Race with imputations',
+    'Imputation probability',
+    'URL of image (PLS NO HOTLINKS)',
+    ' Date of injury resulting in death (month/day/year)',
+    'Location of injury (address)',
+    'Location of death (city)',
+    'State',
+    'Location of death (zip code)',
+    'Location of death (county)',
+    'Full Address',
+    'Latitude',
+    'Longitude',
+    'Agency or agencies involved',
+    'Highest level of force',
+    'UID Temporary',
+    'Name Temporary',
+    'Armed/Unarmed',
+    'Alleged weapon',
+    'Aggressive physical movement',
+    'Fleeing/Not fleeing',
+    'Description Temp',
+    'URL Temp',
+    'Brief description',
+    'Intended use of force (Developing)',
+    'Supporting document link',
+  ],
+  format: {
+    'Unique ID': x => x.toFixed(0),
+    'Location of death (zip code)': x => x.toFixed(0),
+    ' Date of injury resulting in death (month/day/year)': x => new Date(x)
+  },
+})
+```
+
+```{ojs}
+tidy = transpose(fe_data).map(d => ({name: 'Name', date: new Date(d[' Date of injury resulting in death (month/day/year)']).getFullYear(), count: 1, race: 'Race'}))
+```
+
+```{ojs}
+// fe_data_2 = d3.autoType(transpose(fe_data))
+// Plot.rectY(transpose(fe_data), 
+//   Plot.binX(
+//     {y: "count"}, 
+//     {x: ' Date of injury resulting in death (month/day/year)', fill: 'Race'}
+//   )).plot({
+//     marks: [
+//       Plot.frame(),
+//     ]
+//   })
+  // .plot({
+  //   facet: {
+  //     data: filtered,
+  //     x: "sex",
+  //     y: "species",
+  //     marginRight: 80
+  //   },
+    // marks: [
+    //   Plot.frame(),
+    // ]
+//   }
+// )
+
+Plot.barY(tidy, {x: 'date', y: 'count', fill: 'race'}).plot()
+```
+
 ## Search By Map (under construction...)
 ```{ojs}
 geo = require("geoverview@1.2.1")
