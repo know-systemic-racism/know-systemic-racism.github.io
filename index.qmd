@@ -6,8 +6,11 @@ All of the projects below are in active development. If you are interested in le
 
 
 ## California Law Enforcement Agencies
-#### [data](https://github.com/know-systemic-racism/ca-leas-data) | [search](search-bar.html)
+#### [data](https://github.com/know-systemic-racism/ca-leas-data) | [search](lea-search-bar.html)
 This is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories.
+
+## Fatal Encounters 
+#### [search + visualizations](fe-search-viz.html)
 
 ## Knowledge Graph 
 #### [data](https://github.com/know-systemic-racism/knowledge-graph-data) | [app](https://github.com/know-systemic-racism/knowledge-graph-query-app)
