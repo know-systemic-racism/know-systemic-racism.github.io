@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>know-systemic-racism - Week 5: Working together at Stanford</title>
+<title>know-systemic-racism - Summer 2023 KSR DATA LAB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,14 +138,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#weeks-1-2-anabelle" id="toc-weeks-1-2-anabelle" class="nav-link active" data-scroll-target="#weeks-1-2-anabelle">Weeks 1-2 (Anabelle)</a></li>
+  <li><a href="#weeks-3-4-anabelle-and-chloe" id="toc-weeks-3-4-anabelle-and-chloe" class="nav-link" data-scroll-target="#weeks-3-4-anabelle-and-chloe">Weeks 3-4 (Anabelle and Chloe)</a></li>
+  <li><a href="#week-5-working-together-at-stanford" id="toc-week-5-working-together-at-stanford" class="nav-link" data-scroll-target="#week-5-working-together-at-stanford">Week 5: Working together at Stanford</a></li>
+  <li><a href="#weeks-6-7-8" id="toc-weeks-6-7-8" class="nav-link" data-scroll-target="#weeks-6-7-8">Weeks 6, 7, &amp; 8</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 5: Working together at Stanford</h1>
+<h1 class="title">Summer 2023 KSR DATA LAB</h1>
 </div>
 
 
@@ -160,7 +169,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell" data-execution_count="69">
+<p>Our goal for the summer is to pull together the thread and loose ends of previous work. Those threads include: 1. A presentation and collaboration platform for our work that can be a model for other similar projects 2. Wikidata as part of the KSR data ecosystem (contributing to and pulling from) 3. Making recommendations to lawmakers for making policies and inventories computational (machine readable) 4. Making California Law Enforcement policies accessible and useful to citizens 5. Making Military Equipment Inventories more visible and understandable to citizens 6. Connecting siloed data to show relationships between past injustices and present harm as well as showing the positive change resulting from activism and civic engagement 7. “Humanizing the harm rather than [just] presenting cold, dead statistics”</p>
+<section id="weeks-1-2-anabelle" class="level2">
+<h2 class="anchored" data-anchor-id="weeks-1-2-anabelle">Weeks 1-2 (Anabelle)</h2>
+<ol type="1">
+<li><strong>Quarto.</strong> Quarto is now our online publishing platform. It provides a way for people on the team to update content without writing code (just markdown). It is a flexible platform that can take content from Jupyter notebooks, Observable, R, Plotly, etc. and output to a website hosted by github, slide presentations, and print-ready articles.</li>
+<li><strong>Establishing data visualization tools and pipelines.</strong> KSR data comes from heterogenous sources. That means that we need to be able to access and integrate data stored in different systems. We need to visualize data created by activists and stored in Google Sheets. We need to access community-constructed data in Wikidata and data we have created that is stored in github, the Stanford Digital Repository, and Redivis.</li>
+</ol>
+</section>
+<section id="weeks-3-4-anabelle-and-chloe" class="level2">
+<h2 class="anchored" data-anchor-id="weeks-3-4-anabelle-and-chloe">Weeks 3-4 (Anabelle and Chloe)</h2>
+<ol type="1">
+<li><strong>Source data.</strong> Evaluate source datasets for fatalencounters with the police in the US. How are they different? Which should we be using and why?</li>
+<li><strong>Interactivity and Lookup</strong>. Experiment through building solutions for data interactivity and lookup, e.g.&nbsp;searchbar for exploring the law enforcement agencies.</li>
+<li><strong>Wikidata.</strong> Create a Wikiproject page for the Systemic Racism Knowledge Graph project. Add/Update California Law Enforcement Agencies, and improve process and tooling for creation of records.</li>
+</ol>
+</section>
+<section id="week-5-working-together-at-stanford" class="level2">
+<h2 class="anchored" data-anchor-id="week-5-working-together-at-stanford">Week 5: Working together at Stanford</h2>
+<div class="cell" data-execution_count="70">
 <details>
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -175,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>pd.read_csv(url_1)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#df.loc[:, ~df.columns.isin(['Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8'])]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div id="week-5" class="cell-output cell-output-display" data-execution_count="69">
+<div id="week-5" class="cell-output cell-output-display" data-execution_count="70">
 <div>
 
 
@@ -268,11 +295,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 
 </div>
-<p>Scheduled activities for the week</p>
+<p>Scheduled activities for the week of July 24-28, 2023</p>
 </div>
 </div>
+</section>
+<section id="weeks-6-7-8" class="level2">
+<h2 class="anchored" data-anchor-id="weeks-6-7-8">Weeks 6, 7, &amp; 8</h2>
+<ul>
+<li>By the end of time we should have built our Wikidata ecosystem: Enriched entries for Black people killed through interaction with police in California, Military equipment, LEAS, California Legislation, Policies, and, if possible, protests as well.</li>
+<li>We will build on the Week 5 collaboration to build an interface to t</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

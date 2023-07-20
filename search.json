@@ -16,9 +16,37 @@
   {
     "objectID": "workplan_summer_2023.html",
     "href": "workplan_summer_2023.html",
-    "title": "Week 5: Working together at Stanford",
+    "title": "Summer 2023 KSR DATA LAB",
     "section": "",
-    "text": "Code\nimport pandas as pd\n\ndef make_clickable(val):\n    # target _blank to open new window\n    return '&lt;a target=\"_blank\" href=\"{}\"&gt;{}&lt;/a&gt;'.format(val, val)\n\nsheet_url = 'https://docs.google.com/spreadsheets/d/1G4WIcWJK9c1OKdaeDTRwDgDaJkAqAd-IcUrFwmLr04k/edit#gid=58406731'\nurl_1 = sheet_url.replace('/edit#gid=', '/export?format=csv&gid=')\n\npd.read_csv(url_1)\n#df.loc[:, ~df.columns.isin(['Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8'])]\n\n\n\n\n\n\n\n\n\nTime\nMonday\nTuesday\nWednesday\nThursday\nFriday\n\n\n\n\n0\nPROGRAM\nPolicy Manuals Day\nMilitary Equipment Policy Day\nSimple Sabotage Day\nApp Building Day\nWrap Up\n\n\n1\n9:00-10:00\nMeeting - Chloe, Anabelle, Nicole\nDig in to Military Equipment policies\nIndex issues around access to manuals, data.\nHumanize the harm of militarization\nOur plan for the next few weeks\n\n\n2\n10:00 - 11:00\nReview California LEA Policy Manuals\nGather sources of evidence of Military equipme...\nDefine standards for publishing military equip...\nDo these exists in my city, town, neighborhood?\n...\n\n\n3\n11:00 - 12:00\nCRJ-KSR Meeting\nMilitary Equipment\n...\nCommunity Hour\nWorkshop: Rochelle Lundy\n\n\n4\n12:00 - 1:00\nLunch\nLunch with Regina Roberts\nField Trip\nLunch\nCESTA interns lunch\n\n\n5\n1:00 - 2:00\nUse LLM\nMilitary Equiment into Wikidata/Wikimedia\nto\nAPP\nBreathe\n\n\n6\n2:00 - 3:00\nto ask questions of\nMore MEI\nComputer History\nAPP\nNicole and Chloe depart for SFO\n\n\n7\n3:00 - 4:00\nLexipol Policy Manuals\nAFSC Meeting\nMuseum\nAPP\nFLYING\n\n\n\n\n\nScheduled activities for the week"
+    "text": "Our goal for the summer is to pull together the thread and loose ends of previous work. Those threads include: 1. A presentation and collaboration platform for our work that can be a model for other similar projects 2. Wikidata as part of the KSR data ecosystem (contributing to and pulling from) 3. Making recommendations to lawmakers for making policies and inventories computational (machine readable) 4. Making California Law Enforcement policies accessible and useful to citizens 5. Making Military Equipment Inventories more visible and understandable to citizens 6. Connecting siloed data to show relationships between past injustices and present harm as well as showing the positive change resulting from activism and civic engagement 7. “Humanizing the harm rather than [just] presenting cold, dead statistics”"
+  },
+  {
+    "objectID": "workplan_summer_2023.html#weeks-1-2-anabelle",
+    "href": "workplan_summer_2023.html#weeks-1-2-anabelle",
+    "title": "Summer 2023 KSR DATA LAB",
+    "section": "Weeks 1-2 (Anabelle)",
+    "text": "Weeks 1-2 (Anabelle)\n\nQuarto. Quarto is now our online publishing platform. It provides a way for people on the team to update content without writing code (just markdown). It is a flexible platform that can take content from Jupyter notebooks, Observable, R, Plotly, etc. and output to a website hosted by github, slide presentations, and print-ready articles.\nEstablishing data visualization tools and pipelines. KSR data comes from heterogenous sources. That means that we need to be able to access and integrate data stored in different systems. We need to visualize data created by activists and stored in Google Sheets. We need to access community-constructed data in Wikidata and data we have created that is stored in github, the Stanford Digital Repository, and Redivis."
+  },
+  {
+    "objectID": "workplan_summer_2023.html#weeks-3-4-anabelle-and-chloe",
+    "href": "workplan_summer_2023.html#weeks-3-4-anabelle-and-chloe",
+    "title": "Summer 2023 KSR DATA LAB",
+    "section": "Weeks 3-4 (Anabelle and Chloe)",
+    "text": "Weeks 3-4 (Anabelle and Chloe)\n\nSource data. Evaluate source datasets for fatalencounters with the police in the US. How are they different? Which should we be using and why?\nInteractivity and Lookup. Experiment through building solutions for data interactivity and lookup, e.g. searchbar for exploring the law enforcement agencies.\nWikidata. Create a Wikiproject page for the Systemic Racism Knowledge Graph project. Add/Update California Law Enforcement Agencies, and improve process and tooling for creation of records."
+  },
+  {
+    "objectID": "workplan_summer_2023.html#week-5-working-together-at-stanford",
+    "href": "workplan_summer_2023.html#week-5-working-together-at-stanford",
+    "title": "Summer 2023 KSR DATA LAB",
+    "section": "Week 5: Working together at Stanford",
+    "text": "Week 5: Working together at Stanford\n\n\nCode\nimport pandas as pd\n\ndef make_clickable(val):\n    # target _blank to open new window\n    return '&lt;a target=\"_blank\" href=\"{}\"&gt;{}&lt;/a&gt;'.format(val, val)\n\nsheet_url = 'https://docs.google.com/spreadsheets/d/1G4WIcWJK9c1OKdaeDTRwDgDaJkAqAd-IcUrFwmLr04k/edit#gid=58406731'\nurl_1 = sheet_url.replace('/edit#gid=', '/export?format=csv&gid=')\n\npd.read_csv(url_1)\n#df.loc[:, ~df.columns.isin(['Unnamed: 6', 'Unnamed: 7', 'Unnamed: 8'])]\n\n\n\n\n\n\n\n\n\nTime\nMonday\nTuesday\nWednesday\nThursday\nFriday\n\n\n\n\n0\nPROGRAM\nPolicy Manuals Day\nMilitary Equipment Policy Day\nSimple Sabotage Day\nApp Building Day\nWrap Up\n\n\n1\n9:00-10:00\nMeeting - Chloe, Anabelle, Nicole\nDig in to Military Equipment policies\nIndex issues around access to manuals, data.\nHumanize the harm of militarization\nOur plan for the next few weeks\n\n\n2\n10:00 - 11:00\nReview California LEA Policy Manuals\nGather sources of evidence of Military equipme...\nDefine standards for publishing military equip...\nDo these exists in my city, town, neighborhood?\n...\n\n\n3\n11:00 - 12:00\nCRJ-KSR Meeting\nMilitary Equipment\n...\nCommunity Hour\nWorkshop: Rochelle Lundy\n\n\n4\n12:00 - 1:00\nLunch\nLunch with Regina Roberts\nField Trip\nLunch\nCESTA interns lunch\n\n\n5\n1:00 - 2:00\nUse LLM\nMilitary Equiment into Wikidata/Wikimedia\nto\nAPP\nBreathe\n\n\n6\n2:00 - 3:00\nto ask questions of\nMore MEI\nComputer History\nAPP\nNicole and Chloe depart for SFO\n\n\n7\n3:00 - 4:00\nLexipol Policy Manuals\nAFSC Meeting\nMuseum\nAPP\nFLYING\n\n\n\n\n\nScheduled activities for the week of July 24-28, 2023"
+  },
+  {
+    "objectID": "workplan_summer_2023.html#weeks-6-7-8",
+    "href": "workplan_summer_2023.html#weeks-6-7-8",
+    "title": "Summer 2023 KSR DATA LAB",
+    "section": "Weeks 6, 7, & 8",
+    "text": "Weeks 6, 7, & 8\n\nBy the end of time we should have built our Wikidata ecosystem: Enriched entries for Black people killed through interaction with police in California, Military equipment, LEAS, California Legislation, Policies, and, if possible, protests as well.\nWe will build on the Week 5 collaboration to build an interface to t"
   },
   {
     "objectID": "index.html",
