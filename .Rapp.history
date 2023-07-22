@@ -1,0 +1,10 @@
+# source the R code#
+source("https://raw.githubusercontent.com/cengel/ArcGIS_geocoding/master/SUL_gcFunctions.R")
+# make up some addresses:#
+adr <- c('450 Jane Stanford Way, Stanford, CA, 94305',#
+         '1600 Amphitheatre Pkwy, Mountain View, CA 94043',#
+         '1355 Market Street Suite 900, San Francisco, CA 94103')#
+# geocode with USA#
+do.call("rbind", lapply(adr, function(x) geocodeSL(x)))
+install.packages("plotly")
+source("/Users/cnc/Documents/github repos/KSR/know-systemic-racism.github.io/index.qmd")

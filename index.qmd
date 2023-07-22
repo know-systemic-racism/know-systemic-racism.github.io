@@ -1,104 +1,478 @@
 ---
-title: "Know Systemic Racism Data Projects"
+page-layout: custom
+format: html
+toc: false
+css: "/assets/dist/css/bootstrap.min.css"
 --- 
 
-All of the projects below are in active development. If you are interested in learning more about Know Systemic Racism, [see this post](https://library.stanford.edu/blogs/stanford-libraries-blog/2021/08/introducing-know-systemic-racism-ksr-project) or contact Felicia Smith at [felicias@stanford.edu](felicias@stanford.edu)
+```{=HTML}
+   <head><script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.112.5">
+    <title>{title}</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
 
-## California Law Enforcement Agencies
-#### [data](https://github.com/know-systemic-racism/ca-leas-data) | [search](lea-search-bar.html)
-This is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories.
+<!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
+    <style>
+      
+      button p {
+
+        margin-bottom: 0;
+
+      }
+
+      button p a {
+
+        text-decoration: none;
+        color: gray;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+    </style>
+
+    
+  </head>
+  <body>
+
+
+
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+      
+
+
+```
+
+# Know Systemic Racism Data Lab
+### libraries + data science + digital humanities
+
+
+
+```{=HTML}  
+
+          <a href="https://github.com/know-systemic-racism" class="btn btn-primary my-2">GitHub</a>
+          <a href="/about.html" class="btn btn-secondary my-2">Learn more</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+              <div class="col">
+          <div class="card shadow-sm">
+            <img src="images/fatalencounters.png">
+            <div class="card-body">
+
+```
 ## Fatal Encounters 
-#### [search + visualizations](fe-search-viz.html)
+This is work based on the data set collected by D. Brian Burghardt that is made available for download at <a href="https://fatalencounters.org">fatalencounters.org</a>. We are working, primarily, with the records of Black people who died during encounters with the police in California. We have visualized the data so we can begin to explore it.
 
+```{=HTML} 
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+```
+[View](fe-search-viz.html)
+
+
+```{=HTML} 
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <iframe id="frame" src="https://cncoleman.github.io/things/network/" frameborder="0" width="100%" height="225"></iframe>
+            <div class="card-body">
+```
 ## Knowledge Graph 
-#### [data](https://github.com/know-systemic-racism/knowledge-graph-data) | [app](https://github.com/know-systemic-racism/knowledge-graph-query-app)
+
 The Know Systemic Racism Knowledge Graph is a project to construct a richly connected graph of events, people, organizations, and people to reveal connections between discrete collections of data and the people behind the data. 
 
-## California Map 
-#### [view map](https://know-systemic-racism.github.io/ca-map-cnty-bndry) | [code](https://github.com/know-systemic-racism/ca-map-app)
-``` {python} 
-from urllib.request import urlopen
-import json
-with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
-    counties = json.load(response)
+```{=HTML} 
 
-import pandas as pd
-# ** the file below is hosted locally but I could alternatively write code that removes all the non-CA fip codes from the DF 
-df = pd.read_csv("one_col_raw.githubusercontent.com_plotly_datasets_master_fips-unemp-16.csv",  
-                   dtype={"fips": str})
-df_scatter = pd.read_csv("LEA-20230424.csv")
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+``` 
+[Data](https://github.com/know-systemic-racism/knowledge-graph-data)
 
-import plotly.express as px
-
-fig_scatter = px.scatter_mapbox(df_scatter, 
-                  lat='Latitude',
-                  lon='Longitude',
-                  # color="Policy_Manual_Exists", 
-                  # size="car_hours",
-                  labels={'LEA_Type': 'LEA Type', 'QA_Policy_Manual': 'Policy Manual Link'},  # replaces left hand name with right hand name in hover
-                  hover_name='LEA_Name',
-                  hover_data={
-                                  'City': True, 
-                                  'County': True, 
-                                  'Site': True, 
-                                  'LEA_Type': True, 
-                                  'QA_Policy_Manual': True, 
-                                  'Latitude':False,
-                                  'Longitude': False
-                              },
-                  color_continuous_scale=px.colors.cyclical.IceFire, 
-                  size_max=15, 
-                  zoom=10,
-                  mapbox_style="carto-positron")
-
-fig = px.choropleth_mapbox(df, 
-                           geojson=counties, 
-                           locations='fips',
-                           color_continuous_scale="Viridis",
-                           range_color=(0, 12),
-                           mapbox_style="carto-positron",
-                           zoom=4.7, 
-                           center = {"lat": 37.0902, "lon": -120.7129},
-                           opacity=0.5,
-                          )
-fig.update_geos(fitbounds="locations", visible=False)
-fig.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
-fig.add_trace(
-    fig_scatter.data[0]
-)
-
-# customize hover label appearance
-fig.update_layout(
-    hoverlabel=dict(
-        bgcolor="white",
-        font_size=12,
-        font_family="Rockwell"
-    )
-)
-
-fig.show()
+```{=HTML} 
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
 ```
-~~Nothing here, yet! It's coming.~~ It's here!
+[App](https://github.com/know-systemic-racism/knowledge-graph-query-app)
 
-## Stanford Entities 
-#### [data](https://github.com/know-systemic-racism/stanford-history-entities-data)
-This is the start of collecting graph data from Stanford-related library projects.
+```{=HTML} 
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img  width="100%" height="255" src="images/SanJosePolice.png" />
+            <div class="card-body">
+```
 
-## Black@Stanford 
-#### [demo](https://huggingface.co/spaces/StanfordLibraries/KSR-OralHistory)| [code](https://github.com/know-systemic-racism/black-at-stanford-qa-app) | [deprecated code](https://github.com/know-systemic-racism/black-at-stanford-chat-app)
-This is a prototype Question/Answer app that uses as the source a set of oral history transcripts from Black Stanford students and faculty.
+## California MEI 
 
-## Digital Traces 
-#### [data](https://github.com/know-systemic-racism/digital-traces-2023-data) | [code](https://github.com/know-systemic-racism/digital-traces-app)
-This is graph data and a conversational interface to a neo4j database to query the graph. It is based on work done during the winter 2023 course Digital Traces.
-
-## Simple Sabotage 
-#### [paper](https://github.com/know-systemic-racism/simple-sabotage)
-Nothing here, yet! For an article we will write during summer 2023.
-
-## California Military Equipment Inventory 
-#### [code](https://github.com/know-systemic-racism/ca-mei-app) | [urls-data](https://github.com/know-systemic-racism/ca-mei-urls-data) | [index-data](https://github.com/know-systemic-racism/ca-mei-index-data)
 This is the code and data for an app in development that makes information about military equipment used by California law enforcement agencies discoverable.
+
+
+
+```{=HTML} 
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+``` 
+[code](https://github.com/know-systemic-racism/ca-mei-app)
+
+```{=HTML} 
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+```
+[data](https://github.com/know-systemic-racism/ca-mei-urls-data)
+
+```{=HTML} 
+                  </button>
+
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+```
+ [index-data](https://github.com/know-systemic-racism/ca-mei-index-data)
+
+  ```{=HTML}                 
+                 </button>
+                </div>
+                
+              </div>
+ 
+            </div>
+          </div>
+
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img width=100% height=225 src="images/CA_LEAs.png">
+            <div class="card-body">
+
+
+```
+
+## California LEAs
+
+This is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories.
+
+```{=HTML}  
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+``` 
+[Data](https://github.com/know-systemic-racism/ca-leas-data)
+
+```{=HTML} 
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+```
+[Code](https://github.com/know-systemic-racism/ca-map-app)
+
+```{=HTML} 
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height=255 width=100% src="images/ca_map.png"/>
+            <div class="card-body">
+
+
+```
+
+
+
+
+
+## California Map 
+These experiments plotting data on an interactive map of California will contribute to other applications for data discovery.
+
+
+```{=HTML} 
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+``` 
+[View](https://know-systemic-racism.github.io/ca-map-cnty-bndry) 
+
+```{=HTML} 
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+```
+[Code](https://github.com/know-systemic-racism/ca-map-app)
+
+```{=HTML} 
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height=255 width=100% src="images/digital_traces.png"/>
+            <div class="card-body">
+
+
+```
+## Digital Traces 
+
+This is graph data and a conversational interface to a neo4j database to query the graph. It is based on work done during the winter 2023 course Digital Traces.
+```{=HTML} 
+
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+``` 
+[Data](https://github.com/know-systemic-racism/digital-traces-2023-data)
+
+```{=HTML} 
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+```
+[Code](https://github.com/know-systemic-racism/digital-traces-app)
+
+```{=HTML} 
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="images/simplesabotage.png"/>
+            <div class="card-body">
+
+
+```
+## Simple Sabotage 
+
+Nothing here, yet! For an article we will write during summer 2023.
+```{=HTML} 
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+``` 
+[View](https://know-systemic-racism.github.io/ca-map-cnty-bndry) 
+
+```{=HTML} 
+
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img width="100%" height="225" src="images/stanfordpeople.png" />
+            <div class="card-body">
+
+```
+## Stanford Entities 
+
+This is the start of collecting graph data from Stanford-related library projects.
+```{=HTML} 
+
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+``` 
+[data](https://github.com/know-systemic-racism/stanford-history-entities-data)
+
+```{=HTML} 
+
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img width="100%" height="225" src="images/blackatstanford.png"/>
+            <div class="card-body">
+ 
+```
+## Black@Stanford 
+
+This is a prototype Question/Answer app that uses as the source a set of oral history transcripts from Black Stanford students and faculty.
+```{=HTML} 
+
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+``` 
+[demo](https://huggingface.co/spaces/StanfordLibraries/KSR-OralHistory)
+
+```{=HTML} 
+                  </button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+```
+[code](https://github.com/know-systemic-racism/black-at-stanford-qa-app)
+
+```{=HTML} 
+               </button>
+               <button type="button" class="btn btn-sm btn-outline-secondary">
+
+
+```
+[code](https://github.com/know-systemic-racism/black-at-stanford-chat-app)
+
+```{=HTML} 
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+```
+
+
+```{=HTML}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="text-body-secondary py-5">
+  <div class="container">
+    <p class="float-end mb-1">
+      <a href="#">Back to top</a>
+    </p>
+  </div>
+</footer>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

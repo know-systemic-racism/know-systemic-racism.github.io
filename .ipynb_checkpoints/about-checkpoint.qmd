@@ -1,0 +1,5 @@
+---
+title: "About"
+---
+
+This site records the work and work-in-progress of the data team supporting the [Know Systemic Racism project](https://library.stanford.edu/blogs/stanford-libraries-blog/2021/08/introducing-know-systemic-racism-ksr-project). 
