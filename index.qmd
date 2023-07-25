@@ -253,7 +253,7 @@ This is the code and data for an app in development that makes information about
 
 This is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories.
 
-```{=HTML}  
+```{=HTML} 
 
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
@@ -269,11 +269,20 @@ This is a list of California law enforcement agencies with coordinate locations 
 
 ```{=HTML} 
                   </button>
+
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+```
+[App](https://know-systemic-racism.github.io/lea-search-bar)
+
+  ```{=HTML}                 
+                 </button>
                 </div>
                 
               </div>
+ 
             </div>
           </div>
+
         </div>
         <div class="col">
           <div class="card shadow-sm">
