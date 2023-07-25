@@ -283,9 +283,23 @@ This is a list of California law enforcement agencies with coordinate locations 
 
 ```
 
+[App](https://know-systemic-racism.github.io/lea-search-bar)
+
+```{=HTML} 
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img height=255 width=100% src="images/ca_map.png"/>
+            <div class="card-body">
 
 
-
+```
 
 ## California Map 
 These experiments plotting data on an interactive map of California will contribute to other applications for data discovery.
