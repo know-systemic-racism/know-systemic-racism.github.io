@@ -265,7 +265,7 @@ This is a list of California law enforcement agencies with coordinate locations 
                   </button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">
 ```
-[Code](https://github.com/know-systemic-racism/ca-map-app)
+[Search](https://know-systemic-racism.github.io/lea-search-bar)
 
 ```{=HTML} 
                   </button>
