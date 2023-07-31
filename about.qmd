@@ -4,10 +4,10 @@ title: "About"
 
 The KSR Data Lab develops data-driven experiments in support of the [Know Systemic Racism project](https://library.stanford.edu/blogs/stanford-libraries-blog/2021/08/introducing-know-systemic-racism-ksr-project). The central goal of the Know Systemic Racism project is to demonstrate, through data, that systemic racism exists. The project is focused on California and intends to be a model for other libraries in other states in the US to extend the work.
 
-<div height=900px width=1600px>
+<div>
 
 ```{=html}
-<iframe class="slide-deck" src="/slides-summer2023/"></iframe>
+<iframe height=900px width=1600px class="slide-deck" src="/slides-summer2023/"></iframe>
 ```
 
 </div>
