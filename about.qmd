@@ -7,7 +7,7 @@ The KSR Data Lab develops data-driven experiments in support of the [Know System
 <div>
 
 ```{=html}
-<iframe width=800 class="slide-deck" src="/slides-summer2023/"></iframe>
+<iframe width=800 height=450 class="slide-deck" src="/slides-summer2023/"></iframe>
 ```
 
 </div>
