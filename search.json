@@ -14,32 +14,95 @@
     "text": "Code\nfrom urllib.request import urlopen\nimport json\nwith urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:\n    counties = json.load(response)\n\nimport pandas as pd\n# ** the file below is hosted locally but I could alternatively write code that removes all the non-CA fip codes from the DF \ndf = pd.read_csv(\"one_col_raw.githubusercontent.com_plotly_datasets_master_fips-unemp-16.csv\",  \n                   dtype={\"fips\": str})\ndf_scatter = pd.read_csv(\"LEA-20230424.csv\",  \n                   dtype={\"fips\": str})\n\nimport plotly.express as px\n\nfig_scatter = px.scatter_mapbox(df_scatter, lat='Latitude', lon='Longitude',\n                  # color=\"Policy_Manual_Exists\", \n                  # size=\"car_hours\",\n                  labels={'LEA_Type': 'LEA Type', 'Mil_Equip_Policy_Exists' : 'Military Equipment Policy Exists', 'Policy_Manual_Exists' : 'Policy Manual Exists','QA_Policy_Manual': 'Policy Manual Link'},  # replaces left hand name with right hand name in hover\n                  hover_name='LEA_Name',\n                  hover_data=['City', 'County', 'Site', 'LEA_Type', 'Mil_Equip_Policy_Exists', 'Military Equipment Inventory Exists', 'Policy_Manual_Exists', 'QA_Policy_Manual', ],\n                  color_continuous_scale=px.colors.cyclical.IceFire, size_max=15, zoom=10,\n                  mapbox_style=\"carto-positron\")\n\nfig = px.choropleth_mapbox(df, geojson=counties, locations='fips',\n                           color_continuous_scale=\"Viridis\",\n                           range_color=(0, 12),\n                           mapbox_style=\"carto-positron\",\n                           zoom=4.7, center = {\"lat\": 37.0902, \"lon\": -120.7129},\n                           opacity=0.5,\n                          )\nfig.update_geos(fitbounds=\"locations\", visible=False)\nfig.update_layout(margin={\"r\":0,\"t\":0,\"l\":0,\"b\":0})\nfig.add_trace(\n    fig_scatter.data[0]\n)\nfig.show()"
   },
   {
-    "objectID": "lea-search-bar.html",
-    "href": "lea-search-bar.html",
-    "title": "Search for California Law Enforcement Agencies (LEA)",
-    "section": "",
-    "text": "This is a list of California law enforcement agencies that we have gathered and curated for the purpose of finding and tracking policy manuals and military equipment inventories. This list of LEAs was obtained from the California’s Commision on Police Officer Standards and Training"
-  },
-  {
-    "objectID": "lea-search-bar.html#search-leas-by-keyword",
-    "href": "lea-search-bar.html#search-leas-by-keyword",
-    "title": "Search for California Law Enforcement Agencies (LEA)",
-    "section": "Search LEAs By Keyword",
-    "text": "Search LEAs By Keyword\n\nNotes\n\nMEP = Military Equipment Policy\nMEI = Military Equipment Inventory\n\n\n\nCode\ndata = FileAttachment(\"LEA-20230424.csv\").csv({ typed: true })\n\nviewof search = Inputs.search(data, \n{placeholder: \"Enter a zip code, county, city, or police department name\", \nwidth: 900,\nlabel: \"Search LEAs\"\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof rows = Inputs.table(search, {\n  header: {\n    Ref: \"Reference Number\",\n    LEA_Name: \"LEA Name\",\n    Exact_Address: \"Exact Address\",\n    Zip_Code: \"Zip Code\",\n    LEA_Type: \"LEA Type\",\n    Site: \"LEA Website\",\n    Policy_Manual_Exists: \"Policy Manual Exists?\",\n    Mil_Equip_Policy_Exists: \"MEP Exists?\",\n    \"Military Equipment Inventory Exists\": \"MEI Exists?\",\n    QA_Policy_Manual: \"QA Policy Manual Link\",\n    QA_Mil_Equip_Policy: \"QA MEP Link\",\n    \"QA Mil_Equip_Inventory (if separate)\": \"QA MEI Link (if separate)\"\n  },\n  format: {\n    Zip_Code: x =&gt; x.toFixed(0),\n    Site: x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n    QA_Policy_Manual: x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n    QA_Mil_Equip_Policy: x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`, \n    \"QA Mil_Equip_Inventory (if separate)\": x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n  },\n})"
-  },
-  {
-    "objectID": "lea-search-bar.html#search-by-map-under-construction",
-    "href": "lea-search-bar.html#search-by-map-under-construction",
-    "title": "Search for California Law Enforcement Agencies (LEA)",
-    "section": "Search By Map (under construction…)",
-    "text": "Search By Map (under construction…)\n\n\nCode\ngeo = require(\"geoverview@1.2.1\")\ntopojson = require(\"topojson\")\nus = FileAttachment(\"ca_counties_geoverview.json\").json()\nairportsJson = FileAttachment(\"airports.geojson\").json()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncounties = topojson.feature(us, us.objects.counties)\n\n\n\n\n\n\n\n\n\nCode\ngeo.view(counties, {width: 900})\n\n\n\n\n\n\n\n\n\nCode\ngeo.view(airportsJson)\n\n\n\n\n\n\n\n\n\n\n\nCode\nbertin = require(\"bertin@1.2.4\")\n\n\n\n\n\n\n\n\n\nCode\nbertin.quickdraw(counties)"
-  },
-  {
-    "objectID": "index.html#fatal-encounters",
-    "href": "index.html#fatal-encounters",
+    "objectID": "index copy.html#fatal-encounters",
+    "href": "index copy.html#fatal-encounters",
     "title": "Know Systemic Racism Data Lab",
     "section": "Fatal Encounters",
     "text": "Fatal Encounters\nThis is work based on the data set collected by D. Brian Burghardt that is made available for download at fatalencounters.org. We are working, primarily, with the records of Black people who died during encounters with the police in California. We have visualized the data so we can begin to explore it.\n              \n                \n                  \nView"
+  },
+  {
+    "objectID": "index copy.html#knowledge-graph",
+    "href": "index copy.html#knowledge-graph",
+    "title": "Know Systemic Racism Data Lab",
+    "section": "Knowledge Graph",
+    "text": "Knowledge Graph\nThe Know Systemic Racism Knowledge Graph is a project to construct a richly connected graph of events, people, organizations, and people to reveal connections between discrete collections of data and the people behind the data.\n\n              \n                \n                  \nData\n                  \n                  \nApp"
+  },
+  {
+    "objectID": "index copy.html#california-mei",
+    "href": "index copy.html#california-mei",
+    "title": "Know Systemic Racism Data Lab",
+    "section": "California MEI",
+    "text": "California MEI\nThis is the code and data for an app in development that makes information about military equipment used by California law enforcement agencies discoverable.\n\n              \n                \n                  \ncode\n                  \n                  \ndata\n                  \n\n                  \nindex-data"
+  },
+  {
+    "objectID": "index copy.html#california-leas",
+    "href": "index copy.html#california-leas",
+    "title": "Know Systemic Racism Data Lab",
+    "section": "California LEAs",
+    "text": "California LEAs\nThis is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories.\n\n              \n                \n                  \nData\n                  \n                  \nSearch"
+  },
+  {
+    "objectID": "index copy.html#california-map",
+    "href": "index copy.html#california-map",
+    "title": "Know Systemic Racism Data Lab",
+    "section": "California Map",
+    "text": "California Map\nThese experiments plotting data on an interactive map of California will contribute to other applications for data discovery.\n              \n                \n                  \nView\n                  \n                  \nCode"
+  },
+  {
+    "objectID": "index copy.html#digital-traces",
+    "href": "index copy.html#digital-traces",
+    "title": "Know Systemic Racism Data Lab",
+    "section": "Digital Traces",
+    "text": "Digital Traces\nThis is graph data and a conversational interface to a neo4j database to query the graph. It is based on work done during the winter 2023 course Digital Traces.\n\n\n              \n                \n                  \nData\n                  \n                  \nCode"
+  },
+  {
+    "objectID": "index copy.html#simple-sabotage",
+    "href": "index copy.html#simple-sabotage",
+    "title": "Know Systemic Racism Data Lab",
+    "section": "Simple Sabotage",
+    "text": "Simple Sabotage\nNothing here, yet! For an article we will write during summer 2023.\n              \n                \n                  \nView"
+  },
+  {
+    "objectID": "index copy.html#stanford-entities",
+    "href": "index copy.html#stanford-entities",
+    "title": "Know Systemic Racism Data Lab",
+    "section": "Stanford Entities",
+    "text": "Stanford Entities\nThis is the start of collecting graph data from Stanford-related library projects.\n\n\n              \n                \n                  \ndata"
+  },
+  {
+    "objectID": "index copy.html#blackstanford",
+    "href": "index copy.html#blackstanford",
+    "title": "Know Systemic Racism Data Lab",
+    "section": "Black@Stanford",
+    "text": "Black@Stanford\nThis is a prototype Question/Answer app that uses as the source a set of oral history transcripts from Black Stanford students and faculty.\n\n              \n                \n                  \ndemo\n                  \n                  \ncode\n               \n               \n\n\ncode"
+  },
+  {
+    "objectID": "fe-search-viz.html",
+    "href": "fe-search-viz.html",
+    "title": "Searching and Visualizing Fatal Encounters Dataset",
+    "section": "",
+    "text": "These tables and visualizations are generated using the Fatal Encounters Dataset from fatalencounters.org. As seen in the bar charts, this dataset ranges from 2000-2021."
+  },
+  {
+    "objectID": "fe-search-viz.html#search-fatal-encounters-dataset",
+    "href": "fe-search-viz.html#search-fatal-encounters-dataset",
+    "title": "Searching and Visualizing Fatal Encounters Dataset",
+    "section": "Search Fatal Encounters Dataset",
+    "text": "Search Fatal Encounters Dataset\n\nEntire U.S.\n\n\n\n\n\n\n\n\nCode\nviewof fe_search = Inputs.search(transpose(fe_data), \n{placeholder: \"Enter a name, zip code, county, city, or police department name\", \nwidth: 900,\nlabel: \"Search FE Data\"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_rows = Inputs.table(fe_search, {\n  columns: [\n    'Unique ID',\n    'Name',\n    'Age',\n    'Gender',\n    'Race',\n    'Race with imputations',\n    'Imputation probability',\n    'URL of image (PLS NO HOTLINKS)',\n    ' Date of injury resulting in death (month/day/year)',\n    'Location of injury (address)',\n    'Location of death (city)',\n    'State',\n    'Location of death (zip code)',\n    'Location of death (county)',\n    'Full Address',\n    'Latitude',\n    'Longitude',\n    'Agency or agencies involved',\n    'Highest level of force',\n    'UID Temporary',\n    'Name Temporary',\n    'Armed/Unarmed',\n    'Alleged weapon',\n    'Aggressive physical movement',\n    'Fleeing/Not fleeing',\n    'Description Temp',\n    'URL Temp',\n    'Brief description',\n    'Intended use of force (Developing)',\n    'Supporting document link',\n  ],\n  format: {\n    'Unique ID': x =&gt; x.toFixed(0),\n    'Location of death (zip code)': x =&gt; x.toFixed(0),\n    'Supporting document link': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n    'URL of image (PLS NO HOTLINKS)': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`\n  },\n})\n\n\n\n\n\n\n\n\n\nCalifornia Only\n\n\nCode\nca_only = transpose(fe_data).filter(function(p) {\n  return p.State === 'CA';\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_ca_search_all_cols = Inputs.search(ca_only, \n{placeholder: \"Enter a name, zip code, county, city, or police department name\", \nwidth: 900,\nlabel: \"Search FE Data (CA only)\"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_rows_ca_all_cols = Inputs.table(fe_ca_search_all_cols, \n{\n  columns: [\n    'Unique ID',\n    'Name',\n    'Age',\n    'Gender',\n    'Race',\n    'Race with imputations',\n    'Imputation probability',\n    'URL of image (PLS NO HOTLINKS)',\n    ' Date of injury resulting in death (month/day/year)',\n    'Location of injury (address)',\n    'Location of death (city)',\n    'State',\n    'Location of death (zip code)',\n    'Location of death (county)',\n    'Full Address',\n    'Latitude',\n    'Longitude',\n    'Agency or agencies involved',\n    'Highest level of force',\n    'UID Temporary',\n    'Name Temporary',\n    'Armed/Unarmed',\n    'Alleged weapon',\n    'Aggressive physical movement',\n    'Fleeing/Not fleeing',\n    'Description Temp',\n    'URL Temp',\n    'Brief description',\n    'Intended use of force (Developing)',\n    'Supporting document link',\n  ],\n  format: {\n    'Unique ID': x =&gt; x.toFixed(0),\n    'Location of death (zip code)': x =&gt; x.toFixed(0),\n    'Supporting document link': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n    'URL of image (PLS NO HOTLINKS)': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`\n  },\n} \n)\n\n\n\n\n\n\n\n\n\nCode\ntidy_w_race = transpose(fe_data).map(d =&gt; ({date: new Date(d[' Date of injury resulting in death (month/day/year)']).getFullYear(), count: 1, race: d.Race, state: d.State}))"
+  },
+  {
+    "objectID": "fe-search-viz.html#preliminary-fe-data-visualizations",
+    "href": "fe-search-viz.html#preliminary-fe-data-visualizations",
+    "title": "Searching and Visualizing Fatal Encounters Dataset",
+    "section": "Preliminary FE Data Visualizations",
+    "text": "Preliminary FE Data Visualizations\n\nEntire U.S.\nThe plot below visualizes the number of fatal encounters per year for all of the United States.\n\n\nCode\nPlot.plot({\n  width: 928,\n  height: 500,\n  x: {tickFormat: \"\"},\n  y: {tickSpacing: 50},\n  color: {legend: true},\n  marks: [\n  Plot.barY(tidy_w_race, {x: 'date', y: 'count', fill: 'race', sort: 'race'}),\n  ]\n})\n\n\n\n\n\n\n\nThe plot below visualizes the number of fatal encounters per year for all of the United States separated by state.\n\n\nCode\ntidy_no_race = tidy_w_race.map(d =&gt; ({date: d.date, count: d.count, state: d.state}))\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_search_by_state = Inputs.search(tidy_no_race, \n{placeholder: `Enter an abbreviated state name (i.e. for California, type \"CA\")`, \nwidth: 900,\nlabel: \"Search by state\"\n})\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  width: 928,\n  height: 500,\n  x: {tickFormat: \"\"},\n  y: {tickSpacing: 50},\n  color: {legend: true},\n  marks: [\n  Plot.barY(fe_search_by_state, {x: 'date', y: 'count', fill: 'state', sort: 'state'}),\n  ]\n})\n\n\n\n\n\n\n\n\n\nCalifornia Only\nThe plot below visualizes the number of fatal encounters per year for California only.\n\n\nCode\nca_only_tidy = ca_only.map(p =&gt; ({name: p.Name, date: new Date(p[' Date of injury resulting in death (month/day/year)']).getFullYear(), count: 1, race: p.Race, lea: p['Agency or agencies involved']}))\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_ca_search = Inputs.search(ca_only_tidy, \n{placeholder: \"Enter a name, year, race, or police department name\", \nwidth: 900,\nlabel: \"Search Fatal Encounter Dataset (CA only)\"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_rows_ca = Inputs.table(fe_ca_search, \n{\n  columns: [\n    'name',\n    'date',\n    'race',\n    'lea',\n  ],\n  format: {\n    date : x =&gt; x.toFixed(0),\n    // 'Location of death (zip code)': x =&gt; x.toFixed(0),\n    // 'Supporting document link': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n    // 'URL of image (PLS NO HOTLINKS)': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`\n  },\n} \n)\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  width: 1000,\n  height: 600,\n  x: {tickFormat: \"\"},\n  y: {tickSpacing: 50},\n  color: {legend: true},\n  marks: [\n  Plot.barY(fe_ca_search, {x: 'date', y: 'count', fill: 'race', sort: 'race'}),\n  ]\n})"
+  },
+  {
+    "objectID": "data_prep.html",
+    "href": "data_prep.html",
+    "title": "Data Preparation",
+    "section": "",
+    "text": "The data for this project will be made available in multiple locations. We create entities in Wikidata in order to have a unique identifier that can be used by others. Creating Wikidata entries is also about making the data more useful to others, while also making it possible for others to extend and transform it. We store a csv copy of the datasets in the Stanford Digital Repository (SDR) with a description of the dataset and the method of collection and transformation. Where applicable, we also add a copy of the Wikidata schema to SDR. Finally, we have copies of the data available in Github to make it easily availble for use in applications and to provide version control and collaboration on further development of the data.\nSome key steps in the data archiving process are as follows:\n\nStandardize and normalize the data sheets\n\nall headings lowercase\nall leading and trailing whitespaces removed\nnormalized values - fix errors\n\nWhat is the unit for the sheet? Does the title of the dataset reflect this?\nMake sure the csv for deposit is consistent with the data in wikidata and the related schema exported from OpenRefine\nCodebook\n\nExplain each column heading–what is the data, what type of values, what do they mean?\nExplain the methodology. What are the sources? what transformations were made and how were decisions made?\n\nDeposit in SDR\n\nWhat are the terms of use?\nBe sure to explain how to find this data in Wikidata, use it, extend it, transform it\n\nCheck all points. Make sure GitHub, Wikidata, and SDR are consistent and there are references to each in all three locations."
   },
   {
     "objectID": "index.html#knowledge-graph",
@@ -47,6 +110,13 @@
     "title": "Know Systemic Racism Data Lab",
     "section": "Knowledge Graph",
     "text": "Knowledge Graph\nThe Know Systemic Racism Knowledge Graph is a project to construct a richly connected graph of events, people, organizations, and people to reveal connections between discrete collections of data and the people behind the data.\n\n              \n                \n                  \nData\n                  \n                  \nApp"
+  },
+  {
+    "objectID": "index.html#visualizing-fatal-encounters",
+    "href": "index.html#visualizing-fatal-encounters",
+    "title": "Know Systemic Racism Data Lab",
+    "section": "Visualizing Fatal Encounters",
+    "text": "Visualizing Fatal Encounters\nThis is work based on the data set collected by D. Brian Burghardt that is made available for download at fatalencounters.org. We are working, primarily, with the records of Black people who died during encounters with the police in California. We have visualized the data so we can begin to explore it.\n              \n                \n                  \nView"
   },
   {
     "objectID": "index.html#california-mei",
@@ -60,7 +130,7 @@
     "href": "index.html#california-leas",
     "title": "Know Systemic Racism Data Lab",
     "section": "California LEAs",
-    "text": "California LEAs\nThis is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories.\n\n              \n                \n                  \nData\n                  \n                  \nSearch"
+    "text": "California LEAs\nThis is a list of California law enforcement agencies (LEAs) with coordinate locations of headquarters and webaarchived links to the LEA websites.\n\n              \n                \n                  \nGithub\n                  \n                  \nStanford Digital Repository"
   },
   {
     "objectID": "index.html#california-map",
@@ -81,7 +151,7 @@
     "href": "index.html#simple-sabotage",
     "title": "Know Systemic Racism Data Lab",
     "section": "Simple Sabotage",
-    "text": "Simple Sabotage\nNothing here, yet! For an article we will write during summer 2023.\n              \n                \n                  \nView"
+    "text": "Simple Sabotage\nNothing here, yet. This is a placeholder for an article we will write on how to make policies and inventories more accessible to the public following the model of collections as data.\n              \n                \n                  \nView"
   },
   {
     "objectID": "index.html#stanford-entities",
@@ -133,24 +203,24 @@
     "text": "Weeks 6, 7, & 8\n\nBy the end of this period of time we should have built our Wikidata ecosystem: Enriched entries for Black people killed through interaction with police in California, Military equipment, LEAS, California Legislation, Policies, and, if possible, protests as well.\nWe will build on the Week 5 collaboration to build an interface to the military equipment.\nWe will make progress on writing the Simple Sabotage paper"
   },
   {
-    "objectID": "fe-search-viz.html",
-    "href": "fe-search-viz.html",
-    "title": "Searching and Visualizing Fatal Encounters Dataset",
+    "objectID": "lea-search-bar.html",
+    "href": "lea-search-bar.html",
+    "title": "Search for California Law Enforcement Agencies (LEA)",
     "section": "",
-    "text": "These tables and visualizations are generated using the Fatal Encounters Dataset from fatalencounters.org. As seen in the bar charts, this dataset ranges from 2000-2021."
+    "text": "This is a list of California law enforcement agencies that we have gathered and curated for the purpose of finding and tracking policy manuals and military equipment inventories. This list of LEAs was obtained from the California’s Commision on Police Officer Standards and Training"
   },
   {
-    "objectID": "fe-search-viz.html#search-fatal-encounters-dataset",
-    "href": "fe-search-viz.html#search-fatal-encounters-dataset",
-    "title": "Searching and Visualizing Fatal Encounters Dataset",
-    "section": "Search Fatal Encounters Dataset",
-    "text": "Search Fatal Encounters Dataset\n\nEntire U.S.\n\n\n\n\n\n\n\n\nCode\nviewof fe_search = Inputs.search(transpose(fe_data), \n{placeholder: \"Enter a name, zip code, county, city, or police department name\", \nwidth: 900,\nlabel: \"Search FE Data\"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_rows = Inputs.table(fe_search, {\n  columns: [\n    'Unique ID',\n    'Name',\n    'Age',\n    'Gender',\n    'Race',\n    'Race with imputations',\n    'Imputation probability',\n    'URL of image (PLS NO HOTLINKS)',\n    ' Date of injury resulting in death (month/day/year)',\n    'Location of injury (address)',\n    'Location of death (city)',\n    'State',\n    'Location of death (zip code)',\n    'Location of death (county)',\n    'Full Address',\n    'Latitude',\n    'Longitude',\n    'Agency or agencies involved',\n    'Highest level of force',\n    'UID Temporary',\n    'Name Temporary',\n    'Armed/Unarmed',\n    'Alleged weapon',\n    'Aggressive physical movement',\n    'Fleeing/Not fleeing',\n    'Description Temp',\n    'URL Temp',\n    'Brief description',\n    'Intended use of force (Developing)',\n    'Supporting document link',\n  ],\n  format: {\n    'Unique ID': x =&gt; x.toFixed(0),\n    'Location of death (zip code)': x =&gt; x.toFixed(0),\n    'Supporting document link': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n    'URL of image (PLS NO HOTLINKS)': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`\n  },\n})\n\n\n\n\n\n\n\n\n\nCalifornia Only\n\n\nCode\nca_only = transpose(fe_data).filter(function(p) {\n  return p.State === 'CA';\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_ca_search_all_cols = Inputs.search(ca_only, \n{placeholder: \"Enter a name, zip code, county, city, or police department name\", \nwidth: 900,\nlabel: \"Search FE Data (CA only)\"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_rows_ca_all_cols = Inputs.table(fe_ca_search_all_cols, \n{\n  columns: [\n    'Unique ID',\n    'Name',\n    'Age',\n    'Gender',\n    'Race',\n    'Race with imputations',\n    'Imputation probability',\n    'URL of image (PLS NO HOTLINKS)',\n    ' Date of injury resulting in death (month/day/year)',\n    'Location of injury (address)',\n    'Location of death (city)',\n    'State',\n    'Location of death (zip code)',\n    'Location of death (county)',\n    'Full Address',\n    'Latitude',\n    'Longitude',\n    'Agency or agencies involved',\n    'Highest level of force',\n    'UID Temporary',\n    'Name Temporary',\n    'Armed/Unarmed',\n    'Alleged weapon',\n    'Aggressive physical movement',\n    'Fleeing/Not fleeing',\n    'Description Temp',\n    'URL Temp',\n    'Brief description',\n    'Intended use of force (Developing)',\n    'Supporting document link',\n  ],\n  format: {\n    'Unique ID': x =&gt; x.toFixed(0),\n    'Location of death (zip code)': x =&gt; x.toFixed(0),\n    'Supporting document link': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n    'URL of image (PLS NO HOTLINKS)': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`\n  },\n} \n)\n\n\n\n\n\n\n\n\n\nCode\ntidy_w_race = transpose(fe_data).map(d =&gt; ({date: new Date(d[' Date of injury resulting in death (month/day/year)']).getFullYear(), count: 1, race: d.Race, state: d.State}))"
+    "objectID": "lea-search-bar.html#search-leas-by-keyword",
+    "href": "lea-search-bar.html#search-leas-by-keyword",
+    "title": "Search for California Law Enforcement Agencies (LEA)",
+    "section": "Search LEAs By Keyword",
+    "text": "Search LEAs By Keyword\n\nNotes\n\nMEP = Military Equipment Policy\nMEI = Military Equipment Inventory\n\n\n\nCode\ndata = FileAttachment(\"LEA-20230424.csv\").csv({ typed: true })\n\nviewof search = Inputs.search(data, \n{placeholder: \"Enter a zip code, county, city, or police department name\", \nwidth: 900,\nlabel: \"Search LEAs\"\n})\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nviewof rows = Inputs.table(search, {\n  header: {\n    Ref: \"Reference Number\",\n    LEA_Name: \"LEA Name\",\n    Exact_Address: \"Exact Address\",\n    Zip_Code: \"Zip Code\",\n    LEA_Type: \"LEA Type\",\n    Site: \"LEA Website\",\n    Policy_Manual_Exists: \"Policy Manual Exists?\",\n    Mil_Equip_Policy_Exists: \"MEP Exists?\",\n    \"Military Equipment Inventory Exists\": \"MEI Exists?\",\n    QA_Policy_Manual: \"QA Policy Manual Link\",\n    QA_Mil_Equip_Policy: \"QA MEP Link\",\n    \"QA Mil_Equip_Inventory (if separate)\": \"QA MEI Link (if separate)\"\n  },\n  format: {\n    Zip_Code: x =&gt; x.toFixed(0),\n    Site: x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n    QA_Policy_Manual: x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n    QA_Mil_Equip_Policy: x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`, \n    \"QA Mil_Equip_Inventory (if separate)\": x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n  },\n})"
   },
   {
-    "objectID": "fe-search-viz.html#preliminary-fe-data-visualizations",
-    "href": "fe-search-viz.html#preliminary-fe-data-visualizations",
-    "title": "Searching and Visualizing Fatal Encounters Dataset",
-    "section": "Preliminary FE Data Visualizations",
-    "text": "Preliminary FE Data Visualizations\n\nEntire U.S.\nThe plot below visualizes the number of fatal encounters per year for all of the United States.\n\n\nCode\nPlot.plot({\n  width: 928,\n  height: 500,\n  x: {tickFormat: \"\"},\n  y: {tickSpacing: 50},\n  color: {legend: true},\n  marks: [\n  Plot.barY(tidy_w_race, {x: 'date', y: 'count', fill: 'race', sort: 'race'}),\n  ]\n})\n\n\n\n\n\n\n\nThe plot below visualizes the number of fatal encounters per year for all of the United States separated by state.\n\n\nCode\ntidy_no_race = tidy_w_race.map(d =&gt; ({date: d.date, count: d.count, state: d.state}))\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_search_by_state = Inputs.search(tidy_no_race, \n{placeholder: `Enter an abbreviated state name (i.e. for California, type \"CA\")`, \nwidth: 900,\nlabel: \"Search by state\"\n})\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  width: 928,\n  height: 500,\n  x: {tickFormat: \"\"},\n  y: {tickSpacing: 50},\n  color: {legend: true},\n  marks: [\n  Plot.barY(fe_search_by_state, {x: 'date', y: 'count', fill: 'state', sort: 'state'}),\n  ]\n})\n\n\n\n\n\n\n\n\n\nCalifornia Only\nThe plot below visualizes the number of fatal encounters per year for California only.\n\n\nCode\nca_only_tidy = ca_only.map(p =&gt; ({name: p.Name, date: new Date(p[' Date of injury resulting in death (month/day/year)']).getFullYear(), count: 1, race: p.Race, lea: p['Agency or agencies involved']}))\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_ca_search = Inputs.search(ca_only_tidy, \n{placeholder: \"Enter a name, year, race, or police department name\", \nwidth: 900,\nlabel: \"Search Fatal Encounter Dataset (CA only)\"\n})\n\n\n\n\n\n\n\n\n\nCode\nviewof fe_rows_ca = Inputs.table(fe_ca_search, \n{\n  columns: [\n    'name',\n    'date',\n    'race',\n    'lea',\n  ],\n  format: {\n    date : x =&gt; x.toFixed(0),\n    // 'Location of death (zip code)': x =&gt; x.toFixed(0),\n    // 'Supporting document link': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`,\n    // 'URL of image (PLS NO HOTLINKS)': x =&gt; htl.html`&lt;a href=${x} target=_blank&gt;${x}&lt;/a&gt;`\n  },\n} \n)\n\n\n\n\n\n\n\n\n\nCode\nPlot.plot({\n  width: 1000,\n  height: 600,\n  x: {tickFormat: \"\"},\n  y: {tickSpacing: 50},\n  color: {legend: true},\n  marks: [\n  Plot.barY(fe_ca_search, {x: 'date', y: 'count', fill: 'race', sort: 'race'}),\n  ]\n})"
+    "objectID": "lea-search-bar.html#search-by-map-under-construction",
+    "href": "lea-search-bar.html#search-by-map-under-construction",
+    "title": "Search for California Law Enforcement Agencies (LEA)",
+    "section": "Search By Map (under construction…)",
+    "text": "Search By Map (under construction…)\n\n\nCode\ngeo = require(\"geoverview@1.2.1\")\ntopojson = require(\"topojson\")\nus = FileAttachment(\"ca_counties_geoverview.json\").json()\nairportsJson = FileAttachment(\"airports.geojson\").json()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncounties = topojson.feature(us, us.objects.counties)\n\n\n\n\n\n\n\n\n\nCode\ngeo.view(counties, {width: 900})\n\n\n\n\n\n\n\n\n\nCode\ngeo.view(airportsJson)\n\n\n\n\n\n\n\n\n\n\n\nCode\nbertin = require(\"bertin@1.2.4\")\n\n\n\n\n\n\n\n\n\nCode\nbertin.quickdraw(counties)"
   }
 ]
