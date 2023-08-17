@@ -1,0 +1,21 @@
+---
+title: "Data Preparation"
+---
+
+The data for this project will be made available in multiple locations. We create entities in Wikidata in order to have a unique identifier that can be used by others. Creating Wikidata entries is also about making the data more useful to others, while also making it possible for others to extend and transform it. We store a csv copy of the datasets in the Stanford Digital Repository (SDR) with a description of the dataset and the method of collection and transformation. Where applicable, we also add a copy of the Wikidata schema to SDR. Finally, we have copies of the data available in Github to make it easily availble for use in applications and to provide version control and collaboration on further development of the data.
+
+Some key steps in the data archiving process are as follows:
+
+1. Standardize and normalize the data sheets
+	- all headings lowercase
+    - all leading and trailing whitespaces removed
+	- normalized values - fix errors
+2. What is the unit for the sheet? Does the title of the dataset reflect this?
+3. Make sure the csv for deposit is consistent with the data in wikidata and the related schema exported from OpenRefine
+4. Codebook
+	- Explain each column heading--what is the data, what type of values, what do they mean?
+	- Explain the methodology. What are the sources? what transformations were made and how were decisions made?
+5. Deposit in SDR
+	- What are the terms of use?
+	- Be sure to explain how to find this data in Wikidata, use it, extend it, transform it
+6. Check all points. Make sure GitHub, Wikidata, and SDR are consistent and there are references to each in all three locations.

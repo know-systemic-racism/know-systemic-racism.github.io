@@ -130,8 +130,8 @@ css: "/assets/dist/css/bootstrap.min.css"
 
 ```{=HTML}  
 
-          <!-- <a href="https://github.com/know-systemic-racism" class="btn btn-primary my-2">GitHub</a>
-          <a href="/about.html" class="btn btn-secondary my-2">Learn more</a> -->
+          <a href="https://github.com/know-systemic-racism" class="btn btn-primary my-2">GitHub</a>
+          <a href="/about.html" class="btn btn-secondary my-2">Learn more</a>
         </p>
       </div>
     </div>
@@ -141,6 +141,32 @@ css: "/assets/dist/css/bootstrap.min.css"
     <div class="container">
 
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+              <div class="col">
+          <div class="card shadow-sm">
+            <img src="images/fatalencounters.png">
+            <div class="card-body">
+
+```
+## Fatal Encounters 
+This is work based on the data set collected by D. Brian Burghardt that is made available for download at <a href="https://fatalencounters.org">fatalencounters.org</a>. We are working, primarily, with the records of Black people who died during encounters with the police in California. We have visualized the data so we can begin to explore it.
+
+```{=HTML} 
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">
+```
+[View](fe-search-viz.html)
+
+
+```{=HTML} 
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="col">
           <div class="card shadow-sm">
             <iframe id="frame" src="https://cncoleman.github.io/things/network/" frameborder="0" width="100%" height="225"></iframe>
@@ -172,32 +198,6 @@ The Know Systemic Racism Knowledge Graph is a project to construct a richly conn
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src="images/fatalencounters.png">
-            <div class="card-body">
-
-```
-## Visualizing Fatal Encounters 
-This is work based on the data set collected by D. Brian Burghardt that is made available for download at <a href="https://fatalencounters.org">fatalencounters.org</a>. We are working, primarily, with the records of Black people who died during encounters with the police in California. We have visualized the data so we can begin to explore it.
-
-```{=HTML} 
-              <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">
-```
-[View](fe-search-viz.html)
-
-
-```{=HTML} 
-                  </button>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div class="col">
           <div class="card shadow-sm">
             <img  width="100%" height="255" src="images/SanJosePolice.png" />
@@ -251,7 +251,7 @@ This is the code and data for an app in development that makes information about
 
 ## California LEAs
 
-This is a list of California law enforcement agencies (LEAs) with coordinate locations of headquarters and webaarchived links to the LEA websites.
+This is a list of California law enforcement agencies with coordinate locations of headquarters and links to policy manuals and military equipment inventories.
 
 ```{=HTML}  
 
@@ -259,13 +259,13 @@ This is a list of California law enforcement agencies (LEAs) with coordinate loc
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">
 ``` 
-[Github](https://github.com/know-systemic-racism/ca-leas-data)
+[Data](https://github.com/know-systemic-racism/ca-leas-data)
 
 ```{=HTML} 
                   </button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">
 ```
-[Stanford Digital Repository](https://know-systemic-racism.github.io/lea-search-bar)
+[Search](https://know-systemic-racism.github.io/lea-search-bar)
 
 ```{=HTML} 
                   </button>
@@ -354,7 +354,7 @@ This is graph data and a conversational interface to a neo4j database to query t
 ```
 ## Simple Sabotage 
 
-Nothing here, yet. This is a placeholder for an article we will write on how to make policies and inventories more accessible to the public following the model of collections as data.
+Nothing here, yet! For an article we will write during summer 2023.
 ```{=HTML} 
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">

@@ -10,6 +10,8 @@ website:
       - about.qmd
       - href: workplan_summer_2023.ipynb
         text: Workplan
+      - href: data_prep.qmd
+        text: Data
 
 format:
   html:
