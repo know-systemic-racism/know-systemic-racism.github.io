@@ -231,7 +231,9 @@ Plot.plot({
 ```
 
 ### California Only
-The plot below visualizes the number of fatal encounters per year for **California only**.
+The plot below visualizes the number of fatal encounters per year for **California only**. 
+
+**Note**: the "race" column is derived from Fatal Encounter's "Race with imputations" column
 ```{ojs}
 ca_only_tidy = ca_only.map(p => ({name: p.Name, date: new Date(p[' Date of injury resulting in death (month/day/year)']).getFullYear(), count: 1, race: p['Race with imputations'], lea: p['Agency or agencies involved']}))
 ```
