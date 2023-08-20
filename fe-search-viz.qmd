@@ -129,14 +129,73 @@ viewof fe_rows_ca_all_cols = Inputs.table(fe_ca_search_all_cols,
 ```
 
 ```{ojs}
-tidy_w_race = transpose(fe_data).map(d => ({date: new Date(d[' Date of injury resulting in death (month/day/year)']).getFullYear(), count: 1, race: d.Race, state: d.State}))
+abbreviated_states_obj = ({
+  AL: 'Alabama',
+  AK: 'Alaska' ,
+  AS: 'American Samoa',
+  AZ: 'Arizona',
+  AR: 'Arkansas',
+  CA: 'California',
+  CO: 'Colorado',
+  CT: 'Connecticut',
+  DE: 'Delaware',
+  DC: 'District of Columbia',
+  FL: 'Florida',
+  GA: 'Georgia',
+  GU: 'Guam',
+  HI: 'Hawaii',
+  ID: 'Idaho',
+  IL: 'Illinois',
+  IN: 'Indiana',
+  IA: 'Iowa',
+  KS: 'Kansas',
+  KY: 'Kentucky',
+  LA: 'Louisiana',
+  ME: 'Maine',
+  MD: 'Maryland',
+  MA: 'Massachusetts',
+  MI: 'Michigan',
+  MN: 'Minnesota',
+  MS: 'Mississippi',
+  MO: 'Missouri',
+  MT: 'Montana',
+  NE: 'Nebraska',
+  NV: 'Nevada',
+  NH: 'New Hampshire',
+  NJ: 'New Jersey',
+  NM: 'New Mexico',
+  NY: 'New York',
+  NC: 'North Carolina',
+  ND: 'North Dakota',
+  OH: 'Ohio',
+  OK: 'Oklahoma',
+  OR: 'Oregon',
+  PA: 'Pennsylvania',
+  PR: 'Puerto Rico',
+  RI: 'Rhode Island',
+  SC: 'South Carolina',
+  SD: 'South Dakota',
+  TN: 'Tennessee',
+  TX: 'Texas',
+  UT: 'Utah',
+  VT: 'Vermont',
+  VI: 'Virgin Islands',
+  VA: 'Virginia',
+  WA: 'Washington',
+  WV: 'West Virginia',
+  WI: 'Wisconsin',
+  WY: 'Wyoming',
+})
+tidy_w_race = transpose(fe_data).map(d => ({date: new Date(d[' Date of injury resulting in death (month/day/year)']).getFullYear(), count: 1, raceImputed: d['Race with imputations'], race: d.Race, state: abbreviated_states_obj[d.State]}))
 ```
 
 ## Preliminary FE Data Visualizations
 ### Entire U.S.
 The plot below visualizes the number of fatal encounters per year for all of the United States.
 
-
+```{ojs}
+viewof race_imputed = Inputs.radio(new Map([["Race with imputations", 'raceImputed'], ["Race with no imputations", 'race']]), {value: 'raceImputed', label: "Race imputed?"})
+```
 
 ```{ojs}
 Plot.plot({
@@ -146,7 +205,7 @@ Plot.plot({
   y: {tickSpacing: 50},
   color: {legend: true},
   marks: [
-  Plot.barY(tidy_w_race, {x: 'date', y: 'count', fill: 'race', sort: 'race'}),
+  Plot.barY(tidy_w_race, {x: 'date', y: 'count', fill: race_imputed, sort: race_imputed}),
   ]
 })
 ```
@@ -155,11 +214,7 @@ The plot below visualizes the number of fatal encounters per year for all of the
 tidy_no_race = tidy_w_race.map(d => ({date: d.date, count: d.count, state: d.state}))
 ```
 ```{ojs}
-viewof fe_search_by_state = Inputs.search(tidy_no_race, 
-{placeholder: `Enter an abbreviated state name (i.e. for California, type "CA")`, 
-width: 900,
-label: "Search by state"
-})
+viewof fe_search_by_state = Inputs.checkbox(d3.group(tidy_no_race, p => p.state), {label: "Select 1 or more states", key: ['CA']})
 ```
 
 ```{ojs}
@@ -170,7 +225,7 @@ Plot.plot({
   y: {tickSpacing: 50},
   color: {legend: true},
   marks: [
-  Plot.barY(fe_search_by_state, {x: 'date', y: 'count', fill: 'state', sort: 'state'}),
+  Plot.barY(fe_search_by_state.flat(), {x: 'date', y: 'count', fill: 'state', sort: 'state'}),
   ]
 })
 ```
@@ -178,7 +233,7 @@ Plot.plot({
 ### California Only
 The plot below visualizes the number of fatal encounters per year for **California only**.
 ```{ojs}
-ca_only_tidy = ca_only.map(p => ({name: p.Name, date: new Date(p[' Date of injury resulting in death (month/day/year)']).getFullYear(), count: 1, race: p.Race, lea: p['Agency or agencies involved']}))
+ca_only_tidy = ca_only.map(p => ({name: p.Name, date: new Date(p[' Date of injury resulting in death (month/day/year)']).getFullYear(), count: 1, race: p['Race with imputations'], lea: p['Agency or agencies involved']}))
 ```
 
 ```{ojs}
