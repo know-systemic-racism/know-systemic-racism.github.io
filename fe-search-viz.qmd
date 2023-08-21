@@ -261,6 +261,12 @@ viewof fe_rows_ca = Inputs.table(fe_ca_search,
     // 'Supporting document link': x => htl.html`<a href=${x} target=_blank>${x}</a>`,
     // 'URL of image (PLS NO HOTLINKS)': x => htl.html`<a href=${x} target=_blank>${x}</a>`
   },
+  header: {
+    name: 'Name',
+    date: 'Date of death',
+    race: 'Race with imputations',
+    lea: 'Law Enforcement Agency/Agencies involved'
+  }
 } 
 )
 ```
