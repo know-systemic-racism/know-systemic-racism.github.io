@@ -7,16 +7,136 @@ execute:
 These tables and visualizations are generated using the [Fatal Encounters Dataset](https://docs.google.com/spreadsheets/d/1dKmaV_JiWcG8XBoRgP8b4e9Eopkpgt7FL7nyspvzAsE/edit#gid=0) from [fatalencounters.org](https://fatalencounters.org/). As seen in the bar charts, this dataset ranges from 2000-2021.
 
 
-## Search Fatal Encounters Dataset
-### Entire U.S.
+## Mapping Fatal Encounters 
+### Entire U.S. 
 ```{python}
 import pandas as pd
+import plotly.express as px
+from urllib.request import urlopen
+import json
+```
+
+```{python}
 sheet_id = "1dKmaV_JiWcG8XBoRgP8b4e9Eopkpgt7FL7nyspvzAsE"
 sheet_name = "sample_1"
 url = f"https://docs.google.com/spreadsheets/d/{sheet_id}/gviz/tq?tqx=out:csv&sheet={sheet_name}"
 df = pd.read_csv(url)
 ojs_define(fe_data = df)
+
+df['Age'].fillna('Not in Fatal Encounters dataset')
+df_ca_only = df.loc[df['State'] == 'CA']
+
 ```
+
+```{python}
+with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+    counties = json.load(response)
+    # ** the file below is hosted locally but I could alternatively write code that removes all the non-CA fip codes from the DF 
+df_counties_ca = pd.read_csv("one_col_raw.githubusercontent.com_plotly_datasets_master_fips-unemp-16.csv",  
+                   dtype={"fips": str})
+```
+
+```{python}
+fig_scatter_all = px.scatter_mapbox(df, 
+                  lat='Latitude',
+                  lon='Longitude',
+#                   color="Policy_Manual_Exists", 
+                  hover_name='Name',
+                  hover_data={ 
+                                  'Age': True, 
+                                  'Gender': True, 
+                                  'Race with imputations': True, 
+                                  ' Date of injury resulting in death (month/day/year)': True, 
+                                  'Agency or agencies involved': True,
+                                  'Latitude':False,
+                                  'Longitude': False
+                              },
+                  color_continuous_scale=px.colors.cyclical.IceFire, 
+                  size_max=15, 
+                  zoom=10,
+                  mapbox_style="carto-positron")
+
+df_all_counties = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/fips-unemp-16.csv",
+                   dtype={"fips": str})
+
+fig_all_counties = px.choropleth_mapbox(df_all_counties, 
+                           geojson=counties, 
+                           locations='fips',
+                           color_continuous_scale="Viridis",
+                           range_color=(0, 12),
+                           mapbox_style="carto-positron",
+                           zoom=2, 
+                           center = {"lat": 50.0902, "lon": -120.7129},
+                           opacity=0.5,
+                          )
+
+fig_all_counties.update_geos(fitbounds="locations", visible=False)
+fig_all_counties.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+fig_all_counties.add_trace(
+    fig_scatter_all.data[0]
+)
+
+# customize hover label appearance
+fig_all_counties.update_layout(
+    hoverlabel=dict(
+        bgcolor="white",
+        font_size=12,
+        font_family="Rockwell"
+    )
+)
+```
+
+### California only
+```{python}
+fig_scatter = px.scatter_mapbox(df_ca_only, 
+                  lat='Latitude',
+                  lon='Longitude',
+#                   color="Policy_Manual_Exists", 
+                  hover_name='Name',
+                  hover_data={ 
+                                  'Age': True, 
+                                  'Gender': True, 
+                                  'Race with imputations': True, 
+                                  ' Date of injury resulting in death (month/day/year)': True, 
+                                  'Agency or agencies involved': True,
+                                  'Latitude':False,
+                                  'Longitude': False
+                              },
+                  color_continuous_scale=px.colors.cyclical.IceFire, 
+                  size_max=15, 
+                  zoom=10,
+                  mapbox_style="carto-positron")
+
+fig_ca_counties = px.choropleth_mapbox(df_counties_ca, 
+                           geojson=counties, 
+                           locations='fips',
+                           color_continuous_scale="Viridis",
+                           range_color=(0, 12),
+                           mapbox_style="carto-positron",
+                           zoom=4.7, 
+                           center = {"lat": 37.0902, "lon": -120.7129},
+                           opacity=0.5,
+                          )
+
+fig_ca_counties.update_geos(fitbounds="locations", visible=False)
+fig_ca_counties.update_layout(margin={"r":0,"t":0,"l":0,"b":0})
+fig_ca_counties.add_trace(
+    fig_scatter.data[0]
+)
+
+# customize hover label appearance
+fig_ca_counties.update_layout(
+    hoverlabel=dict(
+        bgcolor="white",
+        font_size=12,
+        font_family="Rockwell"
+    )
+)
+```
+
+
+## Search Fatal Encounters Dataset
+### Entire U.S.
 
 ```{ojs}
 viewof fe_search = Inputs.search(transpose(fe_data), 
@@ -284,6 +404,9 @@ Plot.plot({
   ]
 })
 ```
+
+
+
 
 
 
