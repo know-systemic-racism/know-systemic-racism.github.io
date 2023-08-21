@@ -214,7 +214,7 @@ The plot below visualizes the number of fatal encounters per year for all of the
 tidy_no_race = tidy_w_race.map(d => ({date: d.date, count: d.count, state: d.state}))
 ```
 ```{ojs}
-viewof fe_search_by_state = Inputs.checkbox(d3.group(tidy_no_race, p => p.state), {label: "Select 1 or more states", value: ['California']})
+viewof fe_search_by_state = Inputs.checkbox(d3.group(tidy_no_race, p => p.state), {key: ['California', 'Georgia'], sort: "ascending", label: html`<b>Select 1 or more states</b>`})
 ```
 
 ```{ojs}
