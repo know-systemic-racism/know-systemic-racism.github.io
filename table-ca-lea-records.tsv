@@ -1,0 +1,10 @@
+| Wikidata Property | Wikidata Value | Usage Note | Field used from Spreadsheet |
+|-------------------|----------------|------------|---------------------------|
+| instance of (P31) | law enforcement agency (Q732717) |  | n/a |
+| country (P17) | United States of America (Q30) |  | n/a |
+| located in the administrative territorial entity (P131) | county of California (Q13212489) | County of stated law enforcement agency e.g. Alpine County | County |
+| coordinate location (P625) | geographic coordinate (Q104224919) |  | Latlon |
+| headquarters location (P159) | city in the United States (Q1093829), census-designated place in the United States (Q498162) | City or designated place of stated law enforcement agency e.g. Markleeville | City |
+| official website (P856) | URL (Q42253)                    archive URL (P1065)                 language of work or name (P407) = English (Q1860) | URL to stated law enforcement agency official website e.g. https://www.cityofchowchilla.org/176/Police-Department     archived URL for law enforcement agencies official website e.g. https://web.archive.org/web/19981202190615/http://www.lapdonline.org/ | Site url                 Webarchive site url |
+| on focus list of Wikimedia project (P5008) | Wikidata: WikiProject Systemic Racism Knowledge Graph (Q120754096) | Wikidata Project that ties California Law Enforcement Agencies, Victims, and Significant Events together | 
+| documentation files at (P10527) | Policy Manuals (Q121352506)     described at URL (P973)           retrieved (P813) | URL to stated law enforcement agency policy manual     date policy was pulled from data source (format YYYY-MM-DD) | Policy manual        2023-07-10 |

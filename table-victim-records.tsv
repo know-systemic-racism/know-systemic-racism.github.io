@@ -1,0 +1,14 @@
+| Wikidata Property | Wikidata Value | Usage Note | Field used from Sprdsht |
+| instance of (P31) | human (Q5) |  | n/a |
+| sex or gender (P21) | female (Q6581072), male (Q6581097), trans man (Q2449503), trans woman (Q1052281) |  | Gender |
+| country of citizenship (P27) | United States of America (Q30) |  | n/a |
+| given name (P735) | Victim's first name |  | First name |
+| family name (P734) | Victim's last name |  | Last name |
+| date of death (P570) | YYYY-MM-DD | The date the victim died | Date of death (YYYY-MM-DD) |
+| place of death (P20) | city (Q515)        street address (P6375) | City where the victim died     Physical address of significant event (if available) | City     Full address |
+| manner of death (P1196) | homicide (Q149086) | Each incident is defined as a homicide based on information from https://fatalencounters.org/ | n/a |
+| cause of death (P509) | ballistic trauma (Q2140674), fall (Q11620540), car collision (Q61037771), strike (Q3242199), drowning (Q506616), asphyxia (Q193840), electrical injury (Q244404), drug overdose (Q3505252), medical emergency (Q2751242), undetermined (Q15054664) | The highest level of force used by California Law Enforcement Agencies | Manner of death |
+| ethnic group (P172) | African Americans (Q49085) | At this time we are currently working with one group of victims; as more groups are added, values will be updated | Race with imputations |
+| significant event (P793) | Death of [victim's name]           age of subject at event (P3629)              participant (P710)=law enforcement agency (Q732717) | Wikidata page that lead to corresponding incident of person's death     Age of the person at the time of significant event        The California Law Enforcement Agency that participated in the death of the victim | Significant event name        Age        Lea  Lea 2  Lea 3 |
+| described at URL (P973) | https://fatalencounters.org/     language of work or name (P407) = English (Q1860)     retrieved (P813) YYYY-MM-DD | For summer 2023 project - 7/10/23 was used at retrieved date | n/a |
+| on focus list of Wikimedia project (P5008) | Wikidata: WikiProject Systemic Racism Knowledge Graph (Q120754096) | Wikidata Project that ties California Law Enforcement Agencies, Victims, and Significant Events together | n/a |
