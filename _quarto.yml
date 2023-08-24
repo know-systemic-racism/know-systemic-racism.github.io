@@ -12,7 +12,7 @@ website:
         text: Workplan
       - href: data_prep.qmd
         text: Data
-      - href: wikidata_notes.qmd
+      - href: wikidata-notes.qmd
         text: Wikidata Schemas
 format:
   html:
